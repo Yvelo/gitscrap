@@ -13,6 +13,6 @@ CREATE DATABASE gitscrap
 
 GRANT ALL ON DATABASE gitscrap TO scraping;
 
-GRANT ALL ON DATABASE gitscrap TO augur;
+GRANT ALL ON DATABASE gitscrap TO postgres;
 
 GRANT TEMPORARY, CONNECT ON DATABASE gitscrap TO PUBLIC;
