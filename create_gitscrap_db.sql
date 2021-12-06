@@ -1,6 +1,6 @@
--- Database: augur
+-- Database: gitscrap
 
--- DROP DATABASE IF EXISTS augur;
+-- DROP DATABASE IF EXISTS gitscrap;
 
 CREATE DATABASE gitscrap
     WITH
