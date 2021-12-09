@@ -1,6 +1,6 @@
 -- Database: gitscrap
 
--- DROP DATABASE IF EXISTS gitscrap;
+DROP DATABASE IF EXISTS gitscrap;
 
 CREATE DATABASE gitscrap
     WITH
