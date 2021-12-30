@@ -34,7 +34,8 @@ class GitRepository:
             self.open_issues_count = int(json_repository["open_issues_count"])
             self.network_count = json_repository["network_count"]
             self.subscriber_count = json_repository["subscribers_count"]
-            self.license = json_repository["license"]["name"]
+            self.license = json_repository["license"]["name"] if not isinstance(json_repository["license"],type(None)) else ""
+
 
             json_collaborators = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/forks")
             self.collaborators_count = json_collaborators
