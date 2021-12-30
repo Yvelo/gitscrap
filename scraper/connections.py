@@ -6,6 +6,8 @@ from requests.auth import HTTPBasicAuth
 from datetime import datetime
 from time import sleep
 
+API_AUTHORISATION = HTTPBasicAuth(dotenv_values("../.env")["GITHUB_USER"], dotenv_values("../.env")["GITHUB_API_KEY"])
+
 def get_database_connection():
     try:
         database_ip=dotenv_values("../.env")["DATABASE_IP"]
@@ -53,31 +55,29 @@ def wait_for_githup_api_limit(headers):
 
 def get_from_github(url):
     try:
-        response = requests.get(url, auth=HTTPBasicAuth(dotenv_values("../.env")["GITHUB_USER"], dotenv_values("../.env")["GITHUB_API_KEY"]))
-        json_response = response.json()
+        response = requests.get(url, auth=API_AUTHORISATION)
         wait_for_githup_api_limit(response.headers)
-        #print(json.dumps(json_response))
-        return json_response
+        #print(json.dumps(response.json()))
+        return response.json()
     except Exception as ex:
         print("API call failed: " + repr(ex))
 
 def get_github_collection_count(url):
     try:
-        response = requests.get(f"{url}?per_page=1", auth=HTTPBasicAuth(dotenv_values("../.env")["GITHUB_USER"], dotenv_values("../.env")["GITHUB_API_KEY"]))
+        response = requests.get(f"{url}?per_page=1", auth=API_AUTHORISATION)
         wait_for_githup_api_limit(response.headers)
-        if len(response.json())>0:
+        try:
             collection_count = int(response.headers["Link"][response.headers["Link"].find("&page=",response.headers["Link"].find("&page=")+1)+6:response.headers["Link"].find(">;",response.headers["Link"].find(">;")+1)])
-        else:
-            collection_count = 0
+        except:
+            collection_count = len(response.json())
         return collection_count
     except Exception as ex:
         print("API call failed: " + repr(ex))
 
 def get_github_collection_item(url, item_index):
     try:
-        response = requests.get(f"{url}?per_page=100&page={int(item_index/100)}", auth=HTTPBasicAuth(dotenv_values("../.env")["GITHUB_USER"], dotenv_values("../.env")["GITHUB_API_KEY"]))
-        json_response = response.json()
+        response = requests.get(f"{url}?per_page=100&page={int(item_index/100)}", auth=API_AUTHORISATION)
         wait_for_githup_api_limit(response.headers)
-        return json_response[item_index % 100]
+        return response.json()[item_index % 100]
     except Exception as ex:
         print("API call failed: " + repr(ex))

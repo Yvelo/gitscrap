@@ -65,6 +65,7 @@ CREATE TABLE IF NOT EXISTS public.users
     site_admin boolean,
     type character varying(255) COLLATE pg_catalog."default",
 	followers_count integer,
+	following_count integer,
 	subscriptions_count integer,
 	organizations_count integer,
 	repos_count integer,

@@ -25,6 +25,9 @@ class GitUser:
             json_followers = get_github_collection_count(f"https://api.github.com/users/{self.login}/followers")
             self.followers_count = json_followers
 
+            json_following = get_github_collection_count(f"https://api.github.com/users/{self.login}/following")
+            self.following_count = json_following
+
             json_subscriptions = get_github_collection_count(f"https://api.github.com/users/{self.login}/subscriptions")
             self.subscriptions_count = json_subscriptions
 
@@ -41,7 +44,7 @@ class GitUser:
             print("API call failed: " + repr(ex))
 
     def score(self):
-        return math.log10(self.followers_count+self.subscriptions_count+self.organizations_count+self.repos_count+self.events_count+1)
+        return math.log10(self.followers_count*10+self.subscriptions_count+self.organizations_count+self.repos_count*5+self.events_count+1)
 
     def log(self):
         persist_statements([f"""
@@ -52,6 +55,7 @@ class GitUser:
             site_admin,
             type,
             followers_count,
+            following_count,
             subscriptions_count,
             organizations_count,
             repos_count,
@@ -65,6 +69,7 @@ class GitUser:
             {self.site_admin},
             '{self.type}',
             {self.followers_count},
+            {self.following_count},
             {self.subscriptions_count},
             {self.organizations_count},
             {self.repos_count},
