@@ -5,26 +5,27 @@ from scraper.rl_agent import *
 
 
 def test_case_1():
+    persist_statements(["DELETE FROM users", "DELETE FROM repos"])
     repository_list = ["torvalds/linux", "chaoss/augur", "airbytehq/airbyte", "frontity/frontity", "gitpod-io/gitpod",
                        "hoppscotch/hoppscotch", "kinvolk/inspektor-gadget", "meilisearch/MeiliSearch",
                        "matomo-org/matomo", "n8n-io/n8n", "nocodb/nocodb", "ory/hydra", "polyaxon/polyaxon",
                        "robocorp/rpaframework", "strapi/strapi", "quickwit-inc/tantivy", "Teevity/ice",
                        "traefik/traefik", "scilab/scilab", "snyk/snyk", "wasmerio/wasmer"]
-    repository_list = ["torvalds/libdc-for-dirk"]
-    persist_statements(["DELETE FROM users", "DELETE FROM repos"])
     for repository in repository_list:
         print(f"Processing repository {repository}")
-        git_repo=GitRepository(repository)
-        git_user=GitUser(git_repo.owner_login)
+        git_repo=GitRepository(repository, "Reference repositories")
+        git_user=GitUser(git_repo.owner_login, "Reference repositories")
 
     rows=get_cursor("SELECT * from repos ORDER BY ID DESC LIMIT 1")
     print(rows)
 
 def test_case_2():
+    probabilities = [0.2,0.2,0.2,0.1,0.1,0.1,0.1]
+    tag = f"Classic sequence probability vector {str(probabilities)}"
     persist_statements(["DELETE FROM users", "DELETE FROM repos"])
-    git_repo = GitRepository("cgrgnc/classsed-react-firebase-client")
+    git_repo = GitRepository("scilab/scilab", tag)
     for number in range(1000):
-        git_repo = move_to_next_repository(git_repo, [0.2,0.2,0.2,0.1,0.1,0.1,0.1])
+        git_repo = move_to_next_repository(git_repo, probabilities, tag)
 
 
 test_case_2()

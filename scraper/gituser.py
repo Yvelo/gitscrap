@@ -4,10 +4,10 @@ from pprint import pprint
 
 class GitUser:
 
-    def __init__(self, login):
+    def __init__(self, login, tag):
         self.login = login
         self._query_github()
-        self.log()
+        self.log(tag)
 
     def __str__(self):
         return str(pprint(vars(self)))
@@ -46,7 +46,7 @@ class GitUser:
     def score(self):
         return math.log10(self.followers_count*10+self.subscriptions_count+self.organizations_count+self.repos_count*5+self.events_count+1)
 
-    def log(self):
+    def log(self, tag):
         persist_statements([f"""
         INSERT INTO users (
             login,
@@ -61,6 +61,7 @@ class GitUser:
             repos_count,
             events_count,
             user_score,
+            tag,
             recorded_on
         ) VALUES (
             '{self.login}',
@@ -75,5 +76,6 @@ class GitUser:
             {self.repos_count},
             {self.events_count},
             {self.score()},
+            '{tag}',
             NOW()
             )"""])

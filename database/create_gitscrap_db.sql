@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS public.repos
     events_count integer,
     branches_count integer,
 	repository_score double precision,
+    tag character varying(255) COLLATE pg_catalog."default",
     recorded_on timestamp with time zone
 )
 
@@ -71,6 +72,7 @@ CREATE TABLE IF NOT EXISTS public.users
 	repos_count integer,
 	events_count integer,
 	user_score double precision,
+    tag character varying(255) COLLATE pg_catalog."default",
     recorded_on timestamp with time zone
 )
 
