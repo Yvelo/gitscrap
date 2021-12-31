@@ -38,7 +38,7 @@ class GitRepository:
             self.license = json_repository["license"]["name"] if not isinstance(json_repository["license"],type(None)) else ""
 
 
-            json_collaborators = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/forks")
+            json_collaborators = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/collaborators")
             self.collaborators_count = json_collaborators
 
             json_commits = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/commits")
