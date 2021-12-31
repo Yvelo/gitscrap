@@ -64,11 +64,14 @@ def get_random_repo_from_commits(current_repo):
     if current_repo.commits_count > 0:
         item_number = int(current_repo.commits_count * np.random.rand(1)[0])
         try:
-            commiter_login = get_github_collection_item(f"https://api.github.com/repos/{current_repo.full_name}/commits", item_number)["committer"]["login"]
+            committer_login = get_github_collection_item(f"https://api.github.com/repos/{current_repo.full_name}/commits", item_number)["committer"]["login"]
         except:
-            commiter_login = get_github_collection_item(f"https://api.github.com/repos/{current_repo.full_name}/commits", item_number)["author"]["login"]
-        commiter = GitUser(commiter_login)
-        return get_random_repo_from_owner(commiter, current_repo)
+            try:
+                committer_login = get_github_collection_item(f"https://api.github.com/repos/{current_repo.full_name}/commits", item_number)["author"]["login"]
+            except:
+                committer_login = current_repo.owner_login
+        committer = GitUser(committer_login)
+        return get_random_repo_from_owner(committer, current_repo)
     else:
         return current_repo
 
