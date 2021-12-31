@@ -49,9 +49,6 @@ def persist_statements(sql_statements):
 def wait_for_githup_api_limit(headers):
     try:
         wait_time = (float(headers["X-RateLimit-Reset"]) - datetime.strptime(headers["Date"],"%a, %d %b %Y %H:%M:%S GMT").timestamp()) / (float(headers["X-RateLimit-Remaining"]) + 1)
-        api_remaining = headers["X-RateLimit-Remaining"]
-        now = datetime.strptime(headers["Date"], "%a, %d %b %Y %H:%M:%S GMT")
-        print(f"API Limit {api_remaining} at {now}")
         sleep(wait_time)
     except Exception as ex:
         print("API call failed: " + repr(ex))

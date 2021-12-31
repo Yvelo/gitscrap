@@ -7,7 +7,7 @@ MOVE_MASTER = 0
 MOVE_SAME_OWNER = 1
 MOVE_FROM_FOLLOWERS = 2
 MOVE_FROM_FOLLOWING = 3
-MOVE_FORK = 4
+MOVE_FORKS = 4
 MOVE_COMMITS = 5
 MOVE_STACK = 6
 
@@ -114,7 +114,7 @@ def move_to_next_repository(current_repo, probabilities, tag):
         print(f"Case Followings: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
 
     # Case Forks
-    probability_level += probabilities[MOVE_FORK]
+    probability_level += probabilities[MOVE_FORKS]
     if probability_level>random_level:
         new_repo = get_random_repo_from_forks(current_repo, tag)
         random_level = 1.0

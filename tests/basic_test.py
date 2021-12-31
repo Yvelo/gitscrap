@@ -27,5 +27,5 @@ def test_case_2():
     for number in range(1000):
         git_repo = move_to_next_repository(git_repo, probabilities, tag)
 
-
+test_case_1()
 test_case_2()
