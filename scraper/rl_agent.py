@@ -29,7 +29,7 @@ def get_random_repo_from_owner(owner, current_repo, tag):
         item_number = int(owner.repos_count * np.random.rand(1)[0])
         new_repo_full_name = get_github_collection_item(f"https://api.github.com/users/{owner.login}/repos", item_number)["full_name"]
         if new_repo_full_name == current_repo.full_name:
-            new_repo_full_name = get_github_collection_item(f"https://api.github.com/users/{wner.login}/repos", (item_number + 1) % owner.repos_count)["full_name"]
+            new_repo_full_name = get_github_collection_item(f"https://api.github.com/users/{owner.login}/repos", (item_number + 1) % owner.repos_count)["full_name"]
         return GitRepository(new_repo_full_name, tag)
     else:
         return current_repo

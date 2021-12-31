@@ -76,8 +76,9 @@ def get_github_collection_count(url):
 
 def get_github_collection_item(url, item_index):
     try:
-        response = requests.get(f"{url}?per_page=100&page={int(item_index/100)}", auth=API_AUTHORISATION)
+        print(f"{url}?per_page=1&page={item_index}")
+        response = requests.get(f"{url}?per_page=1&page={item_index}", auth=API_AUTHORISATION)
         wait_for_githup_api_limit(response.headers)
-        return response.json()[item_index % 100]
+        return response.json()[0]
     except Exception as ex:
         print("API call failed: " + repr(ex))
