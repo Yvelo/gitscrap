@@ -9,7 +9,7 @@
 The overall objective of gitscrap is to navigate github using its public API in such a way as to discover as many well ranked repositories as possible. The algorithm relies on Reinforcement learning with policy gradients techniques.
 
 ## Technologies
-This project is developped in Python 3.9 and requires a Progress SQL server to persist KPI on GitHub repositories and users. it uses the following libraries:
+This project is developped in Python 3.9 and requires a Progress SQL server to persist KPI calculated for GitHub repositories and users. it uses the following libraries:
 * psycopg2 to connect to progress SQL
 * numpy to perform the linear operations required by the machine learning algorithm
 * requests to connect to GitHub API
