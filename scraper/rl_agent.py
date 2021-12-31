@@ -17,9 +17,10 @@ np.random.seed(int(time.time()))
 #np.random.seed(0)
 
 def pile_repository(repo):
-    repository_stack.append(repo)
-    if len(repository_stack)>REPOSITORY_STACK_SIZE:
-        repository_stack.pop(0)
+    if repository_stack.count(repo) == 0:
+        repository_stack.append(repo)
+        if len(repository_stack)>REPOSITORY_STACK_SIZE:
+            repository_stack.pop(0)
 
 def get_random_repo_from_repository_stack():
     return repository_stack[int(len(repository_stack) * np.random.rand(1)[0])]
