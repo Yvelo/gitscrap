@@ -30,6 +30,7 @@ class GitRepository:
             self.topics = ", ".join(json_repository["topics"])
             self.visibility = json_repository["visibility"]
             self.fork = json_repository["fork"]
+            self.parent_full_name = json_repository["parent"]["full_name"] if self.fork else self.full_name
             self.forks = int(json_repository["forks"])
             self.open_issues_count = int(json_repository["open_issues_count"])
             self.network_count = json_repository["network_count"]
@@ -89,7 +90,7 @@ class GitRepository:
             {self.private},
             {self.owner_id},
             '{self.owner_login}',
-            '{self.description}',
+            '{"" if isinstance(self.description,type(None)) else self.description.replace("'","''")}',
             {self.size},
             {self.stargazers_count},
             {self.watchers_count},
