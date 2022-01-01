@@ -51,6 +51,7 @@ GitScrapt consists of the following components:
 * A module with connections functions to connect to GitHub API and Progress SQL server.
 * A module with the reinforced learning algorithms
 * A module to organise GitScrap testing.
+* A module to prepare graphics on the data collected.
 
 To connect to gitHub you need to get an API token from your GitHub account such as token="ghp_xUiJ0LRNJYL34t6xhsGbtU7n155IvL1Z0aUZ"
 

@@ -3,10 +3,11 @@ import calendar
 
 from scraper.connections import *
 
-repo_creation_log = get_cursor("SELECT full_name, recorded_on FROM repos ORDER BY recorded_on  ASC")
+repo_creation_log = get_cursor("SELECT full_name, recorded_on, repository_score FROM repos ORDER BY recorded_on  ASC")
 duplicates = {}
 x = []
-y = []
+repo_found = []
+score = []
 new_repo = 0
 for event_log in repo_creation_log:
     try:
@@ -15,15 +16,16 @@ for event_log in repo_creation_log:
         duplicates[event_log[0]] = 1
         new_repo +=1
         x.append(calendar.timegm(event_log[1].timetuple()))
-        y.append(new_repo)
-
+        repo_found.append(new_repo)
+        score.append(event_log[2]*100)
 
 plt.style.use('_mpl-gallery')
 
 # plot
 fig, ax = plt.subplots()
 
-ax.plot(x, y, linewidth=2.0)
+ax.plot(x, repo_found, linewidth=1.0)
+ax.plot(x, score, linewidth=1.0)
 
 ax.set(xlim=(x[0], x[-1]),
        ylim=(0, new_repo))
