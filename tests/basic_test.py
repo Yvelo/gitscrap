@@ -24,7 +24,7 @@ def test_case_2():
     probabilities = [0.2,0.2,0.2,0.1,0.1,0.1,0.1]
     tag = f"Classic sequence probability vector {str(probabilities)}"
     git_repo = GitRepository("scilab/scilab", tag)
-    for number in range(1000):
+    for number in range(100000):
         git_repo = move_to_next_repository(git_repo, probabilities, tag)
 
 #reset_database()

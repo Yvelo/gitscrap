@@ -31,12 +31,13 @@ class GitRepository:
             self.visibility = json_repository["visibility"]
             self.fork = json_repository["fork"]
             self.parent_full_name = json_repository["parent"]["full_name"] if self.fork else self.full_name
-            self.forks = int(json_repository["forks"])
             self.open_issues_count = int(json_repository["open_issues_count"])
             self.network_count = json_repository["network_count"]
             self.subscriber_count = json_repository["subscribers_count"]
             self.license = json_repository["license"]["name"] if not isinstance(json_repository["license"],type(None)) else ""
 
+            json_forks = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/forks")
+            self.forks = json_forks
 
             json_collaborators = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/collaborators")
             self.collaborators_count = json_collaborators
