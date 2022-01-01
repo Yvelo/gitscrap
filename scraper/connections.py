@@ -51,7 +51,7 @@ def wait_for_githup_api_limit(headers):
         wait_time = (float(headers["X-RateLimit-Reset"]) - datetime.strptime(headers["Date"],"%a, %d %b %Y %H:%M:%S GMT").timestamp()) / (float(headers["X-RateLimit-Remaining"]) + 1)
         sleep(wait_time)
     except Exception as ex:
-        print("API call failed: " + repr(ex))
+        print(f"API call failed ({headers}): " + repr(ex))
 
 def get_from_github(url):
     try:
@@ -60,7 +60,7 @@ def get_from_github(url):
         #print(json.dumps(response.json()))
         return response.json()
     except Exception as ex:
-        print("API call failed: " + repr(ex))
+        print(f"API call failed ({url}): " + repr(ex))
 
 def get_github_collection_count(url):
     try:
@@ -72,7 +72,7 @@ def get_github_collection_count(url):
             collection_count = len(response.json())
         return collection_count
     except Exception as ex:
-        print("API call failed: " + repr(ex))
+        print(f"API call failed ({url}): " + repr(ex))
 
 def get_github_collection_item(url, item_index):
     try:
@@ -81,4 +81,4 @@ def get_github_collection_item(url, item_index):
         wait_for_githup_api_limit(response.headers)
         return response.json()[0]
     except Exception as ex:
-        print("API call failed: " + repr(ex))
+        print(f"API call failed ({url}): " + repr(ex))

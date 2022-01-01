@@ -4,10 +4,10 @@ from pprint import pprint
 
 class GitRepository:
 
-    def __init__(self, repo_name):
+    def __init__(self, repo_name, tag):
         self.repo_name = repo_name
         self._query_github()
-        self.log()
+        self.log(tag)
 
     def __str__(self):
         return str(pprint(vars(self)))
@@ -55,7 +55,7 @@ class GitRepository:
     def score(self):
         return math.log10(self.stargazers_count+self.forks*10+self.commits_count/100+self.collaborators_count*10+self.events_count+self.branches_count+1)
 
-    def log(self):
+    def log(self, tag):
         persist_statements([f"""
         INSERT INTO repos (
             repository_id,
@@ -81,6 +81,7 @@ class GitRepository:
             events_count,
             branches_count,
             repository_score,
+            tag,
             recorded_on
         ) VALUES (
             {self.id},
@@ -106,5 +107,6 @@ class GitRepository:
             {self.events_count},
             {self.branches_count},
             {self.score()},
+            '{tag}',
             NOW()
             )"""])

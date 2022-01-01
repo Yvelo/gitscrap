@@ -3,6 +3,7 @@
 * [Technologies](#technologies)
 * [Algorithm](#algorithm)
 * [Setup](#setup)
+* [Results](#results)
 * [References](#references)
 
 ## General info
@@ -65,6 +66,12 @@ DATABASE_PASSWORD="..."
 GITHUB_USER="..."
 
 GITHUB_API_KEY="..."
+
+## Results
+### Pure random trajectories 
+In this set of tests, the algorithm move from repositories to repositories using fixed predetermined probabilities for each of the seven possible actions.
+
+### Reinforced learning trajectories
 
 ## References
 * https://www.janisklaise.com/post/rl-policy-gradients/
