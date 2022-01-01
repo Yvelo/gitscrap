@@ -14,18 +14,18 @@ def test_case_1():
                        "traefik/traefik", "scilab/scilab", "snyk/snyk", "wasmerio/wasmer"]
     for repository in repository_list:
         print(f"Processing repository {repository}")
-        git_repo=GitRepository(repository, "Reference repositories")
-        git_user=GitUser(git_repo.owner_login, "Reference repositories")
+        git_repo=GitRepository(repository)
+        git_repo.log("Reference repositories")
+        git_repo.owner.log("Reference repositories")
 
     rows=get_cursor("SELECT * from repos ORDER BY ID DESC LIMIT 1")
     print(rows)
 
 def test_case_2():
     probabilities = [0.2,0.2,0.2,0.1,0.1,0.1,0.1]
-    tag = f"Classic sequence probability vector {str(probabilities)}"
-    git_repo = GitRepository("scilab/scilab", tag)
+    git_repo = GitRepository("kinvolk/inspektor-gadget")
     for number in range(100000):
-        git_repo = move_to_next_repository(git_repo, probabilities, tag)
+        git_repo = move_to_next_repository(git_repo, probabilities, f"Classic sequence probability vector {str(probabilities)}")
 
 #reset_database()
 #test_case_1()

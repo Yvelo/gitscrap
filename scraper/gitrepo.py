@@ -1,13 +1,13 @@
 import math
 from scraper.connections import *
+from scraper.gituser import *
 from pprint import pprint
 
 class GitRepository:
 
-    def __init__(self, repo_name, tag):
+    def __init__(self, repo_name):
         self.repo_name = repo_name
         self._query_github()
-        self.log(tag)
 
     def __str__(self):
         return str(pprint(vars(self)))
@@ -23,6 +23,7 @@ class GitRepository:
             self.private = json_repository["private"]
             self.owner_id = json_repository["owner"]["id"]
             self.owner_login = json_repository["owner"]["login"]
+            self.owner = GitUser(self.owner_login)
             self.description = json_repository["description"]
             self.size = json_repository["size"]
             self.stargazers_count = json_repository["stargazers_count"]

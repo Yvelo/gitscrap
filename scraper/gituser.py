@@ -4,10 +4,9 @@ from pprint import pprint
 
 class GitUser:
 
-    def __init__(self, login, tag):
+    def __init__(self, login):
         self.login = login
         self._query_github()
-        self.log(tag)
 
     def __str__(self):
         return str(pprint(vars(self)))
@@ -15,7 +14,6 @@ class GitUser:
     def _query_github(self):
         try:
             json_user=get_from_github(f"https://api.github.com/users/{self.login}")
-
             # mapping of the most important fields of github API
             self.id = json_user["id"]
             self.node_id = json_user["node_id"]
