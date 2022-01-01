@@ -11,9 +11,10 @@ The overall objective of gitscrap is to navigate github using its public API in 
 
 ## Technologies
 This project is developped in Python 3.9 and requires a Progress SQL server to persist KPI calculated for GitHub repositories and users. it uses the following libraries:
-* psycopg2 to connect to progress SQL
-* numpy to perform the linear operations required by the machine learning algorithm
-* requests to connect to GitHub API
+* psycopg2 to connect to progress SQL.
+* numpy to perform the linear operations required by the machine learning algorithm.
+* requests to connect to GitHub API.
+* mathplotlib to prepare graphical representaion comparing the various algorithms
 
 ## Algorithm
 In the context of GitHub Scraping, the main Reinforcement learning concepts consists of:
