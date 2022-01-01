@@ -6,14 +6,24 @@ from requests.auth import HTTPBasicAuth
 from datetime import datetime
 from time import sleep
 
-API_AUTHORISATION = HTTPBasicAuth(dotenv_values("../.env")["GITHUB_USER"], dotenv_values("../.env")["GITHUB_API_KEY"])
+try:
+    API_AUTHORISATION = HTTPBasicAuth(dotenv_values("../.env")["GITHUB_USER"], dotenv_values("../.env")["GITHUB_API_KEY"])
+except:
+    API_AUTHORISATION = HTTPBasicAuth(dotenv_values(".env")["GITHUB_USER"], dotenv_values(".env")["GITHUB_API_KEY"])
+
 
 def get_database_connection():
     try:
-        database_ip=dotenv_values("../.env")["DATABASE_IP"]
-        database_name=dotenv_values("../.env")["DATABASE_NAME"]
-        database_user=dotenv_values("../.env")["DATABASE_USER"]
-        database_password=dotenv_values("../.env")["DATABASE_PASSWORD"]
+        try:
+            database_ip=dotenv_values("../.env")["DATABASE_IP"]
+            database_name=dotenv_values("../.env")["DATABASE_NAME"]
+            database_user=dotenv_values("../.env")["DATABASE_USER"]
+            database_password=dotenv_values("../.env")["DATABASE_PASSWORD"]
+        except:
+            database_ip=dotenv_values(".env")["DATABASE_IP"]
+            database_name=dotenv_values(".env")["DATABASE_NAME"]
+            database_user=dotenv_values(".env")["DATABASE_USER"]
+            database_password=dotenv_values(".env")["DATABASE_PASSWORD"]
         connection = psycopg2.connect(f"dbname='{database_name}' user='{database_user}' host='{database_ip}' password='{database_password}'")
     except psycopg2.OperationalError as ex:
         print("Database authentication failed: " + repr(ex))
