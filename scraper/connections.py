@@ -60,7 +60,7 @@ def get_from_github(url):
         #print(json.dumps(response.json()))
         return response.json()
     except Exception as ex:
-        print(f"API call failed ({url}): " + repr(ex))
+        print(f"API get call failed ({url}): " + repr(ex))
 
 def get_github_collection_count(url):
     try:
@@ -72,7 +72,7 @@ def get_github_collection_count(url):
             collection_count = len(response.json())
         return collection_count
     except Exception as ex:
-        print(f"API call failed ({url}): " + repr(ex))
+        print(f"API count call failed ({url}): " + repr(ex))
 
 def get_github_collection_item(url, item_index):
     try:
@@ -80,5 +80,7 @@ def get_github_collection_item(url, item_index):
         response = requests.get(f"{url}?per_page=1&page={item_index}", auth=API_AUTHORISATION)
         wait_for_githup_api_limit(response.headers)
         return response.json()[0]
+    except IndexError as ex:
+        pass
     except Exception as ex:
-        print(f"API call failed ({url}): " + repr(ex))
+        print(f"API get item call failed ({url}): " + repr(ex))
