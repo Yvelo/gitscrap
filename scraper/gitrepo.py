@@ -4,10 +4,10 @@ from pprint import pprint
 
 class GitRepository:
 
-    def __init__(self, repo_name, tag):
+    def __init__(self, repo_name):
         self.repo_name = repo_name
         self._query_github()
-        self.log(tag)
+        self.log()
 
     def __str__(self):
         return str(pprint(vars(self)))
@@ -30,14 +30,12 @@ class GitRepository:
             self.topics = ", ".join(json_repository["topics"])
             self.visibility = json_repository["visibility"]
             self.fork = json_repository["fork"]
+            self.forks = json_repository["forks"]
             self.parent_full_name = json_repository["parent"]["full_name"] if self.fork else self.full_name
             self.open_issues_count = int(json_repository["open_issues_count"])
             self.network_count = json_repository["network_count"]
             self.subscriber_count = json_repository["subscribers_count"]
             self.license = json_repository["license"]["name"] if not isinstance(json_repository["license"],type(None)) else ""
-
-            json_forks = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/forks")
-            self.forks = json_forks
 
             json_collaborators = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/collaborators")
             self.collaborators_count = json_collaborators
@@ -57,7 +55,7 @@ class GitRepository:
     def score(self):
         return math.log10(self.stargazers_count+self.forks*10+self.commits_count/100+self.collaborators_count*10+self.events_count+self.branches_count+1)
 
-    def log(self, tag):
+    def log(self):
         persist_statements([f"""
         INSERT INTO repos (
             repository_id,
@@ -83,7 +81,6 @@ class GitRepository:
             events_count,
             branches_count,
             repository_score,
-            tag,
             recorded_on
         ) VALUES (
             {self.id},
@@ -109,6 +106,5 @@ class GitRepository:
             {self.events_count},
             {self.branches_count},
             {self.score()},
-            '{tag}',
             NOW()
             )"""])

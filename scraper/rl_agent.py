@@ -22,43 +22,47 @@ def pile_repository(repo):
         if len(repository_stack)>REPOSITORY_STACK_SIZE:
             repository_stack.pop(0)
 
-def get_random_repo_from_repository_stack():
-    return repository_stack[int(len(repository_stack) * np.random.rand(1)[0])]
+def get_random_repo_from_repository_stack(current_repo):
+    try:
+        return repository_stack[int(len(repository_stack) * np.random.rand(1)[0])]
+    except:
+        return current_repo
 
 def get_random_repo_from_owner(owner, current_repo, tag):
-    if owner.repos_count > 1:
+    try:
         item_number = int(owner.repos_count * np.random.rand(1)[0])
         new_repo_full_name = get_github_collection_item(f"https://api.github.com/users/{owner.login}/repos", item_number)["full_name"]
         if new_repo_full_name == current_repo.full_name:
             new_repo_full_name = get_github_collection_item(f"https://api.github.com/users/{owner.login}/repos", (item_number + 1) % owner.repos_count)["full_name"]
         return GitRepository(new_repo_full_name, tag)
-    else:
+    except:
         return current_repo
 
 def get_random_repo_from_followers(owner, current_repo, tag):
-    if owner.followers_count > 1:
+    try:
         item_number = int(owner.followers_count * np.random.rand(1)[0])
         follower_login = get_github_collection_item(f"https://api.github.com/users/{owner.login}/followers", item_number)["login"]
         follower = GitUser(follower_login, tag)
         return get_random_repo_from_owner(follower, current_repo, tag)
-    else:
+    except:
         return current_repo
 
 def get_random_repo_from_following(owner, current_repo, tag):
-    if owner.following_count > 1:
+    try:
         item_number = int(owner.following_count * np.random.rand(1)[0])
         following_login = get_github_collection_item(f"https://api.github.com/users/{owner.login}/following", item_number)["login"]
         following = GitUser(following_login, tag)
         return get_random_repo_from_owner(following, current_repo, tag)
-    else:
+    except:
         return current_repo
 
+
 def get_random_repo_from_forks(current_repo, tag):
-    if current_repo.forks > 0:
+    try:
         item_number = int(current_repo.forks * np.random.rand(1)[0])
         fork_full_name = get_github_collection_item(f"https://api.github.com/repos/{current_repo.full_name}/forks", item_number)["full_name"]
         return GitRepository(fork_full_name, tag)
-    else:
+    except:
         return current_repo
 
 def get_random_repo_from_commits(current_repo, tag):
@@ -131,7 +135,7 @@ def move_to_next_repository(current_repo, probabilities, tag):
     # Case Stack
     probability_level += probabilities[MOVE_STACK]
     if probability_level>random_level:
-        new_repo = get_random_repo_from_repository_stack()
+        new_repo = get_random_repo_from_repository_stack(current_repo)
         print(f"Case Stack: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
 
     return new_repo
