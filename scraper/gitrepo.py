@@ -5,25 +5,24 @@ from pprint import pprint
 
 class GitRepository:
 
-    def __init__(self, repo_name):
-        self.repo_name = repo_name
-        self._query_github()
+    def __init__(self, repo_name, owner = None):
+        self.full_name = repo_name
+        self._query_github(owner)
 
     def __str__(self):
         return str(pprint(vars(self)))
 
-    def _query_github(self):
+    def _query_github(self, owner):
         try:
-            json_repository=get_from_github(f"https://api.github.com/repos/{self.repo_name}")
+            json_repository=get_from_github(f"https://api.github.com/repos/{self.full_name}")
 
             # mapping of the most important fields of github API
             self.id = json_repository["id"]
             self.node_id = json_repository["node_id"]
-            self.full_name = json_repository["full_name"]
             self.private = json_repository["private"]
             self.owner_id = json_repository["owner"]["id"]
             self.owner_login = json_repository["owner"]["login"]
-            self.owner = GitUser(self.owner_login)
+            self.owner = owner if not isinstance(owner,type(None)) else GitUser(self.owner_login)
             self.description = json_repository["description"]
             self.size = json_repository["size"]
             self.stargazers_count = json_repository["stargazers_count"]
@@ -38,16 +37,16 @@ class GitRepository:
             self.subscriber_count = json_repository["subscribers_count"]
             self.license = json_repository["license"]["name"] if not isinstance(json_repository["license"],type(None)) else ""
 
-            json_collaborators = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/collaborators")
+            json_collaborators = get_github_collection_count(f"https://api.github.com/repos/{self.full_name}/collaborators")
             self.collaborators_count = json_collaborators
 
-            json_commits = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/commits")
+            json_commits = get_github_collection_count(f"https://api.github.com/repos/{self.full_name}/commits")
             self.commits_count = json_commits
 
-            json_events = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/events")
+            json_events = get_github_collection_count(f"https://api.github.com/repos/{self.full_name}/events")
             self.events_count = json_events
 
-            json_branches = get_github_collection_count(f"https://api.github.com/repos/{self.repo_name}/branches")
+            json_branches = get_github_collection_count(f"https://api.github.com/repos/{self.full_name}/branches")
             self.branches_count = json_branches
 
         except Exception as ex:

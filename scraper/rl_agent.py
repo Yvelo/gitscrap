@@ -36,7 +36,7 @@ def get_random_repo_from_owner(owner, current_repo):
         new_repo_full_name = get_github_collection_item(f"https://api.github.com/users/{owner.login}/repos", item_number)["full_name"]
         if new_repo_full_name == current_repo.full_name:
             new_repo_full_name = get_github_collection_item(f"https://api.github.com/users/{owner.login}/repos", (item_number + 1) % owner.repos_count)["full_name"]
-        return GitRepository(new_repo_full_name)
+        return GitRepository(new_repo_full_name, owner)
     except:
         return current_repo
 
