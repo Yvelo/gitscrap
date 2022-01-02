@@ -73,9 +73,15 @@ GITHUB_API_KEY="..."
 ### Pure random trajectories 
 In this case the algorithm moves from repositories to repositories using fixed and predetermined probabilities to decide between each of the seven possible actions.
 
-In average GitScrap discovers 0.11 repositories each second which is not enough to cover the current growth rate of GitHub.
+In average GitScrap discovers 0.11 repositories each second which is not enough to cover the current growth rate of GitHub. An hourly pattern can be observed on the discovery speed which corresponds to GitHub API speed limitation which is based on an hourly cycle.
+
+As a reference, the average score of a pool of 30 Open Source repositories with successful commercial extensions is 4.16 (as compared with 1.72 for a random selection of repositories). 
 
 ![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_any_score_1.png?raw=true)
+
+When we focus on the discovery of repositories with a score greater than 3 there are no indications of non-random bias in the discovery process. 
+
+![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_score_gt_3.png?raw=true)
 
 ### Reinforced learning trajectories
 

@@ -3,7 +3,7 @@ import calendar
 from scraper.connections import *
 
 def repository_creation_speed(tag):
-    repo_creation_log = get_cursor(f"SELECT full_name, recorded_on, repository_score FROM repos WHERE tag='{tag}' AND repository_score>1 ORDER BY recorded_on  ASC")
+    repo_creation_log = get_cursor(f"SELECT full_name, recorded_on, repository_score FROM repos WHERE tag='{tag}' AND repository_score>3 ORDER BY recorded_on  ASC")
     duplicates = {}
     x = []
     repo_found = []
@@ -29,7 +29,7 @@ def repository_creation_speed(tag):
 
     plt.figure(figsize=(10,60))
     plt.subplot(2,1,1)
-    plt.title(f"Repository discovery speed (any score)\n{tag}\n", fontdict = {'fontsize' : 14, 'weight' : 'bold'})
+    plt.title(f"Repository discovery speed (Score>3)\n{tag}\n", fontdict = {'fontsize' : 14, 'weight' : 'bold'})
     plt.plot(timeline, creation_speed, linewidth=1.0)
     plt.xlabel(f"New repositories discovered per second (average = {'{:.2f}'.format(sum(creation_speed)/len(score))}/s)")
     plt.subplot(2,1,2)
@@ -40,3 +40,4 @@ def repository_creation_speed(tag):
     plt.show()
 
 repository_creation_speed("Classic sequence probability vector [0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.1]")
+#repository_creation_speed("Reference repositories")
