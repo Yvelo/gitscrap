@@ -3,9 +3,7 @@ import calendar
 from scraper.connections import *
 
 def repository_creation_speed(tag):
-    repo_creation_log = get_cursor(f"SELECT full_name, recorded_on, repository_score FROM repos WHERE tag='{tag}' AND repository_score>5 ORDER BY recorded_on  ASC")
-    for log in repo_creation_log:
-        print(f"* {log[0]}")
+    repo_creation_log = get_cursor(f"SELECT full_name, recorded_on, repository_score FROM repos WHERE tag='{tag}' AND repository_score>0 ORDER BY recorded_on  ASC")
     duplicates = {}
     x = []
     repo_found = []
@@ -41,5 +39,5 @@ def repository_creation_speed(tag):
     plt.subplots_adjust(hspace = 0.3)
     plt.show()
 
-repository_creation_speed("Classic sequence probability vector [0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.1]")
+repository_creation_speed("Classic sequence probability vector [0.1,0.1,0.1,0.2,0.2,0.2,0.1]")
 #repository_creation_speed("Reference repositories")

@@ -23,7 +23,7 @@ def test_case_1():
     print(rows)
 
 def test_case_2():
-    probabilities = [0.2,0.2,0.2,0.1,0.1,0.1,0.1]
+    probabilities = [0.1,0.1,0.1,0.2,0.2,0.2,0.1]
     git_repo = GitRepository("learn-co-students/recursion-lab-v-000")
     for number in range(100000):
         git_repo = move_to_next_repository(git_repo, probabilities, f"Classic sequence probability vector {str(probabilities)}")

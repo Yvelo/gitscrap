@@ -42,7 +42,11 @@ When the algorithm has to pick a repository among many, it uses a biased random 
 
 In parallel a reporting engine will task GitScrap to regularly process the top N repositories sorted by rank so that to build reliable evolution statistics on the pool of the best ranked repositories. User KPIs are also collected by the algorithm.
 
-The algorithm will first be implemented without reinforcement learning while assigning fixed probabilities to each action independently of the state of the system. Even a non-IA improved walk through GitHub might prove efficient enough to achieve the overall goal: monitor efficiently the best ranked repositories of GitHub. 
+The algorithm has been first be implemented without reinforcement learning while assigning fixed probabilities to each action independently of the state of the system. This basic random walk through GitHub is not rapid enough to be useful to monitor GitHub. It can however serve as a baseline to evaluate the efficiency gains of reinforced learning. 
+
+The repository score is calculated as follow:
+
+<img src="https://render.githubusercontent.com/render/math?math=\color{blue}\large\ score = \log _{10}\left(stars + forks + branches + events + 10 * collaborators + \frac{commits}{100}\right)">
 
 ## Setup
 GitScrapt consists of the following components:
