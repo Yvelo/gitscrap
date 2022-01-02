@@ -40,13 +40,13 @@ In the context of GitHub Scraping, the main Reinforcement learning concepts cons
 
 When the algorithm has to pick a repository among many, it uses a biased random selection: the repository with the highest rank is selected out of T trials. 
 
-In parallel a reporting engine will task GitScrap to regularly process the top N repositories sorted by rank so that to build reliable evolution statistics on the pool of the best ranked repositories. User KPIs are also collected by the algorithm.
+In parallel a reporting engine regularly processes the top N repositories sorted by rank so that to build reliable evolution statistics on the pool of the best ranked repositories. User KPIs are also collected by the algorithm.
 
 The algorithm has been first be implemented without reinforcement learning while assigning fixed probabilities to each action independently of the state of the system. This basic random walk through GitHub is not rapid enough to be useful to monitor GitHub. It can however serve as a baseline to evaluate the efficiency gains of reinforced learning. 
 
 The repository score is calculated as follow:
 
-<img src="https://render.githubusercontent.com/render/math?math=\color{brown}\large\ score = \log _{10}\left(stars %2B forks %2B branches %2B events %2B 10 * collaborators %2B \frac{commits}{100}\right)">
+<img src="https://render.githubusercontent.com/render/math?math=\color{brown}\large\ score = \log _{10}\left(stars %2B forks %2B branches %2B events %2B 10 * collaborators %2B \Large\frac{commits}{100}\right)">
 
 ## Setup
 GitScrapt consists of the following components:
@@ -79,13 +79,17 @@ In this case the algorithm moves from repositories to repositories using fixed a
 
 In average GitScrap discovers 0.11 repositories each second which is not enough to cover the current growth rate of GitHub. An hourly pattern can be observed on the discovery speed which corresponds to GitHub API speed limitation which is based on an hourly cycle.
 
-As a reference, the average score of a pool of 30 Open Source repositories with successful commercial extensions is 4.16 (as compared with 1.72 for a random selection of repositories). 
+As a reference, the average score of a pool of 30 Open Source repositories with successful commercial extensions is 4.16 (as compared with 1.72 for a random selection of repositories). When randomly selected 2.3% (est. 650000 public repositories) of the repositories have a score greater than 4. Even if the reinforced learning algorithm would only pick repositories with a score greater than 4 it would take him 6 months to inventory 90% of them.
 
 ![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_any_score_1.png?raw=true)
 
 When we focus on the discovery of repositories with a score greater than 3 there are no indications of non-random bias in the discovery process. 
 
 ![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_score_gt_3.png?raw=true)
+
+Modifying the set of action probabilities does not seem to have an observable impact on the discovery speed. 
+
+![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_any_score_2.png?raw=true)
 
 List of 15 repositories with scores greater than 5 found in 11 hours of scraping:
 * ant-design/ant-design

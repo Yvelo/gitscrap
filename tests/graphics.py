@@ -24,12 +24,13 @@ def repository_creation_speed(tag):
             except Exception as ex:
                 creation_speed.append(0)
                 print(ex)
-            score.append((event_log[2]))
+            score.append(event_log[2])
             timeline.append((calendar.timegm(event_log[1].timetuple()) - x[0])/3600)
+            print(event_log[2])
 
     plt.figure(figsize=(10,60))
     plt.subplot(2,1,1)
-    plt.title(f"Repository discovery speed (Score>5)\n{tag}\n", fontdict = {'fontsize' : 14, 'weight' : 'bold'})
+    plt.title(f"Repository discovery speed (any score)\n{tag}\n", fontdict = {'fontsize' : 14, 'weight' : 'bold'})
     plt.plot(timeline, creation_speed, linewidth=1.0)
     plt.xlabel(f"New repositories discovered per second (average = {'{:.2f}'.format(sum(creation_speed)/len(score))}/s)")
     plt.subplot(2,1,2)
@@ -39,5 +40,5 @@ def repository_creation_speed(tag):
     plt.subplots_adjust(hspace = 0.3)
     plt.show()
 
-repository_creation_speed("Classic sequence probability vector [0.1,0.1,0.1,0.2,0.2,0.2,0.1]")
 #repository_creation_speed("Reference repositories")
+repository_creation_speed("Classic sequence probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]")
