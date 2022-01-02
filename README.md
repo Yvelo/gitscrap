@@ -71,7 +71,11 @@ GITHUB_API_KEY="..."
 
 ## Results
 ### Pure random trajectories 
-In this set of tests, the algorithm move from repositories to repositories using fixed predetermined probabilities for each of the seven possible actions.
+In this case the algorithm moves from repositories to repositories using fixed and predetermined probabilities to decide between each of the seven possible actions.
+
+In average GitScrap discovers 0.11 repositories each second which is not enough to cover the current growth rate of GitHub.
+
+![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_any_score_1.png?raw=true)
 
 ### Reinforced learning trajectories
 
@@ -79,4 +83,5 @@ In this set of tests, the algorithm move from repositories to repositories using
 * https://www.janisklaise.com/post/rl-policy-gradients/
 * http://ufldl.stanford.edu/tutorial/supervised/SoftmaxRegression/
 * https://medium.com/samkirkiles/reinforce-policy-gradients-from-scratch-in-numpy-6a09ae0dfe12
-* https://machinelearningmastery.com/softmax-activation-function-with-python/ .
+* https://machinelearningmastery.com/softmax-activation-function-with-python/.
+* https://towardsdatascience.com/githubs-path-to-128m-public-repositories-f6f656ab56b1
