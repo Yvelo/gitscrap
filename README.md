@@ -46,7 +46,7 @@ The algorithm has been first be implemented without reinforcement learning while
 
 The repository score is calculated as follow:
 
-<img src="https://render.githubusercontent.com/render/math?math=\color{blue}\large\ score = \log _{10}\left(stars + forks + branches + events + 10 * collaborators + \frac{commits}{100}\right)">
+<img src="https://render.githubusercontent.com/render/math?math=\color{brown}\large\ score = \log _{10}\left(stars %2B forks %2B branches %2B events %2B 10 * collaborators %2B \frac{commits}{100}\right)">
 
 ## Setup
 GitScrapt consists of the following components:
