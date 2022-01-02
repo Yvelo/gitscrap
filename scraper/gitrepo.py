@@ -54,7 +54,10 @@ class GitRepository:
             raise ex
 
     def score(self):
-        return math.log10(self.stargazers_count+self.forks*10+self.commits_count/100+self.collaborators_count*10+self.events_count+self.branches_count+1)
+        try:
+            return math.log10(self.stargazers_count+self.forks*10+self.commits_count/100+self.collaborators_count*10+self.events_count+self.branches_count+1)
+        except:
+            return 0
 
     def log(self, tag):
         persist_statements([f"""

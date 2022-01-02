@@ -43,7 +43,10 @@ class GitUser:
             raise ex
 
     def score(self):
-        return math.log10(self.followers_count*10+self.subscriptions_count+self.organizations_count+self.repos_count*5+self.events_count+1)
+        try:
+            return math.log10(self.followers_count*10+self.subscriptions_count+self.organizations_count+self.repos_count*5+self.events_count+1)
+        except:
+            return 0
 
     def log(self, tag):
         persist_statements([f"""

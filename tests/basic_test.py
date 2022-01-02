@@ -12,6 +12,7 @@ def test_case_1():
                        "matomo-org/matomo", "n8n-io/n8n", "nocodb/nocodb", "ory/hydra", "polyaxon/polyaxon",
                        "robocorp/rpaframework", "strapi/strapi", "quickwit-inc/tantivy", "Teevity/ice",
                        "traefik/traefik", "scilab/scilab", "snyk/snyk", "wasmerio/wasmer"]
+    #repository_list=["learn-co-students/recursion-lab-v-000"]
     for repository in repository_list:
         print(f"Processing repository {repository}")
         git_repo=GitRepository(repository)
@@ -23,10 +24,10 @@ def test_case_1():
 
 def test_case_2():
     probabilities = [0.2,0.2,0.2,0.1,0.1,0.1,0.1]
-    git_repo = GitRepository("kinvolk/inspektor-gadget")
+    git_repo = GitRepository("learn-co-students/recursion-lab-v-000")
     for number in range(100000):
         git_repo = move_to_next_repository(git_repo, probabilities, f"Classic sequence probability vector {str(probabilities)}")
 
-reset_database()
-test_case_1()
+#reset_database()
+#test_case_1()
 test_case_2()
