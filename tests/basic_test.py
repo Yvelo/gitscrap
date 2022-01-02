@@ -27,6 +27,6 @@ def test_case_2():
     for number in range(100000):
         git_repo = move_to_next_repository(git_repo, probabilities, f"Classic sequence probability vector {str(probabilities)}")
 
-#reset_database()
-#test_case_1()
+reset_database()
+test_case_1()
 test_case_2()

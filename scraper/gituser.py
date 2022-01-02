@@ -40,6 +40,7 @@ class GitUser:
 
         except Exception as ex:
             print("API call failed: " + repr(ex))
+            raise ex
 
     def score(self):
         return math.log10(self.followers_count*10+self.subscriptions_count+self.organizations_count+self.repos_count*5+self.events_count+1)
