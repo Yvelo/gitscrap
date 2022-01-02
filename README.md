@@ -83,6 +83,24 @@ When we focus on the discovery of repositories with a score greater than 3 there
 
 ![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_score_gt_3.png?raw=true)
 
+List of 15 repositories with scores greater than 5 found in 11 hours of scraping:
+* ant-design/ant-design
+* atralice/Curso.Prep.Henry
+* bailicangdu/vue2-elm
+* BVLC/caffe
+* EbookFoundation/free-programming-books
+* facebook/create-react-app
+* geekcomputers/Python
+* github/docs
+* golang/go
+* jwasham/coding-interview-university
+* microsoft/vscode
+* nightscout/cgm-remote-monitor
+* scikit-learn/scikit-learn
+* tensorflow/tensorflow
+* vinta/awesome-python
+
+
 ### Reinforced learning trajectories
 
 ## References
