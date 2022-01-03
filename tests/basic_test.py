@@ -23,10 +23,10 @@ def test_case_1():
     print(rows)
 
 def test_case_2():
-    probabilities = [0.1,0.1,0.1,0.2,0.2,0.2,0.1]
-    git_repo = GitRepository("barakmich/etcd_store")
+    probabilities = [0.19,0.1,0.1,0.2,0.2,0.2,0.01]
+    git_repo = GitRepository("snyk/snyk")
     for number in range(100000):
-        git_repo = move_to_next_repository(git_repo, probabilities, f"Stack size 1000 and probability vector {str(probabilities)}")
+        git_repo = move_to_next_repository(git_repo, probabilities, f"Stack size 100 and probability vector {str(probabilities)}")
 
 #reset_database()
 #test_case_1()

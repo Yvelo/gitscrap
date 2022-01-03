@@ -20,7 +20,7 @@ def repository_creation_speed(tag):
             x.append(calendar.timegm(event_log[1].timetuple()))
             repo_found.append(new_repo)
             try:
-                creation_speed.append((new_repo-max(0, new_repo - 100))/(calendar.timegm(event_log[1].timetuple())-x[max(0, new_repo-100)]))
+                creation_speed.append((new_repo-max(0, new_repo - 2))/(calendar.timegm(event_log[1].timetuple())-x[max(0, new_repo-2)]))
             except Exception as ex:
                 creation_speed.append(0)
                 print(ex)
@@ -29,7 +29,7 @@ def repository_creation_speed(tag):
 
     plt.figure(figsize=(10,60))
     plt.subplot(2,1,1)
-    plt.title(f"Repository discovery speed (any score)\n{tag}\n", fontdict = {'fontsize' : 14, 'weight' : 'bold'})
+    plt.title(f"Repository discovery speed (Any score)\n{tag}\n", fontdict = {'fontsize' : 14, 'weight' : 'bold'})
     plt.plot(timeline, creation_speed, linewidth=1.0)
     plt.xlabel(f"New repositories discovered per second (average = {'{:.2f}'.format(sum(creation_speed)/len(score))}/s)")
     plt.subplot(2,1,2)
@@ -40,5 +40,7 @@ def repository_creation_speed(tag):
     plt.show()
 
 #repository_creation_speed("Reference repositories")
+#repository_creation_speed("Classic sequence probability vector [0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.1]")
 #repository_creation_speed("Classic sequence probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]")
-repository_creation_speed("Stack size 1000 and probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]")
+#repository_creation_speed("Stack size 1000 and probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]")
+repository_creation_speed("Stack size 1000 and probability vector [0.19,0.1,0.1,0.2,0.2,0.2,0.01]")

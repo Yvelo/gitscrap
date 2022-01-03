@@ -77,7 +77,7 @@ GITHUB_API_KEY="..."
 ### Pure random trajectories 
 In this case the algorithm moves from repositories to repositories using fixed and predetermined probabilities to decide between each of the seven possible actions.
 
-In average GitScrap discovers 0.11 repositories each second which is not enough to cover the current growth rate of GitHub. An hourly pattern can be observed on the discovery speed which corresponds to GitHub API speed limitation which is based on an hourly cycle.
+In average GitScrap discovers 0.28 repositories each second which is not enough to cover the current growth rate of GitHub. An hourly pattern can be observed on the discovery speed. It corresponds to an improvable method to account for GitHub API speed limitation. 
 
 As a reference, the average score of a pool of 30 Open Source repositories with successful commercial extensions is 4.16 (as compared with 1.72 for a random selection of repositories). When randomly selected 2.3% (est. 650000 public repositories) of the repositories have a score greater than 4. Even if the reinforced learning algorithm would only pick repositories with a score greater than 4 it would take him 6 months to inventory 90% of them.
 

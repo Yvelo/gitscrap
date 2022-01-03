@@ -11,7 +11,7 @@ MOVE_FORKS = 4
 MOVE_COMMITS = 5
 MOVE_STACK = 6
 
-REPOSITORY_STACK_SIZE = 1000
+REPOSITORY_STACK_SIZE = 100
 repository_stack=[]
 np.random.seed(int(time.time()))
 #np.random.seed(0)
