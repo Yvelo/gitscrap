@@ -26,7 +26,6 @@ def repository_creation_speed(tag):
                 print(ex)
             score.append(event_log[2])
             timeline.append((calendar.timegm(event_log[1].timetuple()) - x[0])/3600)
-            print(event_log[2])
 
     plt.figure(figsize=(10,60))
     plt.subplot(2,1,1)

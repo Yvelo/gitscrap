@@ -5,8 +5,12 @@ from pprint import pprint
 class GitUser:
 
     def __init__(self, login):
-        self.login = login
-        self._query_github()
+        try:
+            self.login = login
+            self._query_github()
+        except Exception as ex:
+            print("User creation failed: " + repr(ex))
+            raise ex
 
     def __str__(self):
         return str(pprint(vars(self)))
@@ -49,35 +53,39 @@ class GitUser:
             return 0
 
     def log(self, tag):
-        persist_statements([f"""
-        INSERT INTO users (
-            login,
-            user_id,
-            node_id,
-            site_admin,
-            type,
-            followers_count,
-            following_count,
-            subscriptions_count,
-            organizations_count,
-            repos_count,
-            events_count,
-            user_score,
-            tag,
-            recorded_on
-        ) VALUES (
-            '{self.login}',
-            {self.id},
-            '{self.node_id}',
-            {self.site_admin},
-            '{self.type}',
-            {self.followers_count},
-            {self.following_count},
-            {self.subscriptions_count},
-            {self.organizations_count},
-            {self.repos_count},
-            {self.events_count},
-            {self.score()},
-            '{tag}',
-            NOW()
-            )"""])
+        try:
+            persist_statements([f"""
+            INSERT INTO users (
+                login,
+                user_id,
+                node_id,
+                site_admin,
+                type,
+                followers_count,
+                following_count,
+                subscriptions_count,
+                organizations_count,
+                repos_count,
+                events_count,
+                user_score,
+                tag,
+                recorded_on
+            ) VALUES (
+                '{self.login}',
+                {self.id},
+                '{self.node_id}',
+                {self.site_admin},
+                '{self.type}',
+                {self.followers_count},
+                {self.following_count},
+                {self.subscriptions_count},
+                {self.organizations_count},
+                {self.repos_count},
+                {self.events_count},
+                {self.score()},
+                '{tag}',
+                NOW()
+                )"""])
+        except Exception as ex:
+            print("SQL call failed: " + repr(ex))
+            raise ex

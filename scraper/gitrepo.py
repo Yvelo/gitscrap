@@ -6,8 +6,12 @@ from pprint import pprint
 class GitRepository:
 
     def __init__(self, repo_name, owner = None):
-        self.full_name = repo_name
-        self._query_github(owner)
+        try:
+            self.full_name = repo_name
+            self._query_github(owner)
+        except Exception as ex:
+            print("Repository creation failed: " + repr(ex))
+            raise ex
 
     def __str__(self):
         return str(pprint(vars(self)))
@@ -60,57 +64,61 @@ class GitRepository:
             return 0
 
     def log(self, tag):
-        persist_statements([f"""
-        INSERT INTO repos (
-            repository_id,
-            node_id,
-            full_name,
-            private,
-            owner_id,
-            owner_login,
-            description,
-            size,
-            stargazers_count,
-            watchers_count,
-            topics,
-            visibility,
-            fork,
-            forks,
-            open_issues_count,
-            network_count,
-            subscriber_count,
-            license,
-            collaborators_count,
-            commits_count,
-            events_count,
-            branches_count,
-            repository_score,
-            tag,
-            recorded_on
-        ) VALUES (
-            {self.id},
-            '{self.node_id}',
-            '{self.full_name}',
-            {self.private},
-            {self.owner_id},
-            '{self.owner_login}',
-            '{"" if isinstance(self.description,type(None)) else self.description.replace("'","''")}',
-            {self.size},
-            {self.stargazers_count},
-            {self.watchers_count},
-            '{self.topics}',
-            '{self.visibility}',
-            {self.fork},
-            {self.forks},
-            {self.open_issues_count},
-            {self.network_count},
-            {self.subscriber_count},
-            '{self.license}',
-            {self.collaborators_count},
-            {self.commits_count},
-            {self.events_count},
-            {self.branches_count},
-            {self.score()},
-            '{tag}',
-            NOW()
-            )"""])
+        try:
+            persist_statements([f"""
+            INSERT INTO repos (
+                repository_id,
+                node_id,
+                full_name,
+                private,
+                owner_id,
+                owner_login,
+                description,
+                size,
+                stargazers_count,
+                watchers_count,
+                topics,
+                visibility,
+                fork,
+                forks,
+                open_issues_count,
+                network_count,
+                subscriber_count,
+                license,
+                collaborators_count,
+                commits_count,
+                events_count,
+                branches_count,
+                repository_score,
+                tag,
+                recorded_on
+            ) VALUES (
+                {self.id},
+                '{self.node_id}',
+                '{self.full_name}',
+                {self.private},
+                {self.owner_id},
+                '{self.owner_login}',
+                '{"" if isinstance(self.description,type(None)) else self.description.replace("'","''")}',
+                {self.size},
+                {self.stargazers_count},
+                {self.watchers_count},
+                '{self.topics}',
+                '{self.visibility}',
+                {self.fork},
+                {self.forks},
+                {self.open_issues_count},
+                {self.network_count},
+                {self.subscriber_count},
+                '{self.license}',
+                {self.collaborators_count},
+                {self.commits_count},
+                {self.events_count},
+                {self.branches_count},
+                {self.score()},
+                '{tag}',
+                NOW()
+                )"""])
+        except Exception as ex:
+            print("SQL call failed: " + repr(ex))
+            raise ex
