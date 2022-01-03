@@ -42,5 +42,5 @@ def repository_creation_speed(tag):
 #repository_creation_speed("Reference repositories")
 #repository_creation_speed("Classic sequence probability vector [0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.1]")
 #repository_creation_speed("Classic sequence probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]")
-#repository_creation_speed("Stack size 1000 and probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]")
-repository_creation_speed("Stack size 1000 and probability vector [0.19,0.1,0.1,0.2,0.2,0.2,0.01]")
+repository_creation_speed("Stack size 1000 and probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]")
+#repository_creation_speed("Stack size 1000 and probability vector [0.19,0.1,0.1,0.2,0.2,0.2,0.01]")
