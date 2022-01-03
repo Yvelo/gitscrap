@@ -87,7 +87,7 @@ When we focus on the discovery of repositories with a score greater than 3 there
 
 ![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_score_gt_3.png?raw=true)
 
-Modifying the set of action probabilities does not seem to have an observable impact on the discovery speed. 
+Modifying the set of action probabilities does not seem to have an observable impact on the discovery speed.The increase of the stack size form 100 to 1000 doesn't either seem to increase the algorithm velocity.
 
 ![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_any_score_2.png?raw=true)
 
