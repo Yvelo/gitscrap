@@ -30,18 +30,18 @@ def overal_activity():
         print(f"    * Distinct repositories found: {row[4]} ({'{:.1f}'.format(100*row[4]/(row[3]))} %) at a speed of {'{:.3f}'.format(row[4]/(calendar.timegm(row[2].timetuple())-calendar.timegm(row[1].timetuple())))} repository/second.")
     print(f"")
     print(f"#### Reference repositories")
-    rows=get_cursor("SELECT full_name, repository_score, commits_count FROM repos WHERE tag='Reference repositories' ORDER BY repository_score DESC")
+    rows=get_cursor("SELECT full_name, repository_score, commits_count, forks FROM repos WHERE tag='Reference repositories' ORDER BY repository_score DESC")
     for row in rows:
-        print(f"* Repository https://github.com/{row[0]} scores {'{:.1f}'.format(row[1])} and consists of {row[2]} commits.")
+        print(f"* Repository https://github.com/{row[0]} (score: {'{:.1f}'.format(row[1])}, commits: {row[2]}, forks: {row[3]}, found: 1).")
     print(f"")
     print(f"#### Top 100 repositories found")
-    rows=get_cursor("SELECT full_name, max(repository_score) as score, max(commits_count) as commits, count(full_name) as duplicate_level FROM repos GROUP BY full_name ORDER BY score DESC LIMIT 100")
+    rows=get_cursor("SELECT full_name, max(repository_score) as score, max(commits_count) as commits, max(forks) as forks, count(full_name) as duplicate_level FROM repos GROUP BY full_name ORDER BY score DESC LIMIT 100")
     duplicate_count=0
     for row in rows:
-        print(f"* Repository https://github.com/{row[0]} scores {'{:.1f}'.format(row[1])} consists of {row[2]} commits and has been found {row[3]} time{'' if row[3]==1 else 's'}.")
-        duplicate_count += row[3]-1
+        print(f"* Repository https://github.com/{row[0]} (score: {'{:.1f}'.format(row[1])}, commits: {row[2]}, forks: {row[3]}, found: {row[4]}).")
+        duplicate_count += row[4]-1
     print(f"")
-    print(f"In total {duplicate_count} duplicates ({'{:.1f}'.format(100*duplicate_count/(100+duplicate_count))} %) have been found with the top 100 repositories")
+    print(f"Among the top 100 repositories {duplicate_count} duplicates ({'{:.1f}'.format(100*duplicate_count/(100+duplicate_count))} %) have been found.")
     print(f"")
 
 overal_activity()
