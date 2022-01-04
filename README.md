@@ -101,26 +101,26 @@ Modifying the set of action probabilities does not seem to have an observable im
 
 #### Statistics per test runs
 * Session: Classic sequence probability vector [0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.1]
-** Processing time: 39927 seconds.
-** Repositories found: 4522 at a speed of 0.113 repository/second.
-** Distinct repositories found: 4021 (88.9 %) at a speed of 0.101 repository/second.
+    * Processing time: 39927 seconds.
+    * Repositories found: 4522 at a speed of 0.113 repository/second.
+    * Distinct repositories found: 4021 (88.9 %) at a speed of 0.101 repository/second.
 * Session: Classic sequence probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]
-** Processing time: 20555 seconds.
-** Repositories found: 2132 at a speed of 0.104 repository/second.
-** Distinct repositories found: 2016 (94.6 %) at a speed of 0.098 repository/second.
+    * Processing time: 20555 seconds.
+    * Repositories found: 2132 at a speed of 0.104 repository/second.
+    * Distinct repositories found: 2016 (94.6 %) at a speed of 0.098 repository/second.
 * Session: Stack size 1000 and probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]
-** Processing time: 26688 seconds.
-** Repositories found: 2693 at a speed of 0.101 repository/second.
-** Distinct repositories found: 2504 (93.0 %) at a speed of 0.094 repository/second.
+    * Processing time: 26688 seconds.
+    * Repositories found: 2693 at a speed of 0.101 repository/second.
+    * Distinct repositories found: 2504 (93.0 %) at a speed of 0.094 repository/second.
 * Session: Stack size 100 and probability vector [0.19, 0.1, 0.1, 0.2, 0.2, 0.2, 0.01]
-** Processing time: 30959 seconds.
-** Repositories found: 3073 at a speed of 0.099 repository/second.
-** Distinct repositories found: 2773 (90.2 %) at a speed of 0.090 repository/second.
+    * Processing time: 30959 seconds.
+    * Repositories found: 3073 at a speed of 0.099 repository/second.
+    * Distinct repositories found: 2773 (90.2 %) at a speed of 0.090 repository/second.
 * Session: Reference repositories
-** Processing time: 226 seconds.
-** Repositories found: 21 at a speed of 0.093 repository/second.
-** Distinct repositories found: 21 (100.0 %) at a speed of 0.093 repository/second.
-
+    * Processing time: 226 seconds.
+    * Repositories found: 21 at a speed of 0.093 repository/second.
+    * Distinct repositories found: 21 (100.0 %) at a speed of 0.093 repository/second.
+    
 #### Reference repositories
 * Repository https://github.com/torvalds/linux scores 5.7 and has 1060197 commits
 * Repository https://github.com/strapi/strapi scores 5.0 and has 19755 commits

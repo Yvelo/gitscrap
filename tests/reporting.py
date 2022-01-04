@@ -25,9 +25,9 @@ def overal_activity():
     rows=get_cursor("SELECT tag, min(recorded_on) as started_on, max(recorded_on) as finished_on, COUNT(full_name) as repository_count, COUNT(DISTINCT full_name) as distinc_repository_count FROM repos GROUP BY tag ORDER BY started_on")
     for row in rows:
         print(f"* Session: {row[0]}")
-        print(f"** Processing time: {calendar.timegm(row[2].timetuple())-calendar.timegm(row[1].timetuple())} seconds.")
-        print(f"** Repositories found: {row[3]} at a speed of {'{:.3f}'.format(row[3]/(calendar.timegm(row[2].timetuple())-calendar.timegm(row[1].timetuple())))} repository/second.")
-        print(f"** Distinct repositories found: {row[4]} ({'{:.1f}'.format(100*row[4]/(row[3]))} %) at a speed of {'{:.3f}'.format(row[4]/(calendar.timegm(row[2].timetuple())-calendar.timegm(row[1].timetuple())))} repository/second.")
+        print(f"    * Processing time: {calendar.timegm(row[2].timetuple())-calendar.timegm(row[1].timetuple())} seconds.")
+        print(f"    * Repositories found: {row[3]} at a speed of {'{:.3f}'.format(row[3]/(calendar.timegm(row[2].timetuple())-calendar.timegm(row[1].timetuple())))} repository/second.")
+        print(f"    * Distinct repositories found: {row[4]} ({'{:.1f}'.format(100*row[4]/(row[3]))} %) at a speed of {'{:.3f}'.format(row[4]/(calendar.timegm(row[2].timetuple())-calendar.timegm(row[1].timetuple())))} repository/second.")
     print(f"")
     print(f"#### Reference repositories")
     rows=get_cursor("SELECT full_name, repository_score, commits_count FROM repos WHERE tag='Reference repositories' ORDER BY repository_score DESC")
