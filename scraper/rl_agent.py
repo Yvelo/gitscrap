@@ -84,58 +84,61 @@ def get_random_repo_from_commits(current_repo):
 
 
 def move_to_next_repository(current_repo, probabilities, tag):
-    pile_repository(current_repo, tag)
-    new_repo = current_repo
-    random_level=np.random.rand(1)[0]
+    try:
+        pile_repository(current_repo, tag)
+        new_repo = current_repo
+        random_level=np.random.rand(1)[0]
 
-    # Case Master
-    probability_level=probabilities[MOVE_MASTER]
-    if probability_level>random_level:
-        if current_repo.fork:
-            new_repo = GitRepository(current_repo.parent_full_name)
-        random_level = 1.0
-        print(f"Case Master: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
+        # Case Master
+        probability_level=probabilities[MOVE_MASTER]
+        if probability_level>random_level:
+            if current_repo.fork:
+                new_repo = GitRepository(current_repo.parent_full_name)
+            random_level = 1.0
+            print(f"Case Master: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
 
-    # Case Owner
-    probability_level += probabilities[MOVE_SAME_OWNER]
-    if probability_level>random_level:
-        new_repo = get_random_repo_from_owner(current_repo.owner, current_repo)
-        random_level = 1.0
-        print(f"Case Same owner: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
+        # Case Owner
+        probability_level += probabilities[MOVE_SAME_OWNER]
+        if probability_level>random_level:
+            new_repo = get_random_repo_from_owner(current_repo.owner, current_repo)
+            random_level = 1.0
+            print(f"Case Same owner: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
 
-    # Case Followers
-    probability_level += probabilities[MOVE_FROM_FOLLOWERS]
-    if probability_level>random_level:
-        new_repo = get_random_repo_from_followers(current_repo.owner, current_repo)
-        random_level = 1.0
-        print(f"Case Followers: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
+        # Case Followers
+        probability_level += probabilities[MOVE_FROM_FOLLOWERS]
+        if probability_level>random_level:
+            new_repo = get_random_repo_from_followers(current_repo.owner, current_repo)
+            random_level = 1.0
+            print(f"Case Followers: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
 
-    # Case Followings
-    probability_level += probabilities[MOVE_FROM_FOLLOWING]
-    if probability_level>random_level:
-        new_repo = get_random_repo_from_following(current_repo.owner, current_repo)
-        random_level = 1.0
-        print(f"Case Followings: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
+        # Case Followings
+        probability_level += probabilities[MOVE_FROM_FOLLOWING]
+        if probability_level>random_level:
+            new_repo = get_random_repo_from_following(current_repo.owner, current_repo)
+            random_level = 1.0
+            print(f"Case Followings: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
 
-    # Case Forks
-    probability_level += probabilities[MOVE_FORKS]
-    if probability_level>random_level:
-        new_repo = get_random_repo_from_forks(current_repo)
-        random_level = 1.0
-        print(f"Case Forks: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
+        # Case Forks
+        probability_level += probabilities[MOVE_FORKS]
+        if probability_level>random_level:
+            new_repo = get_random_repo_from_forks(current_repo)
+            random_level = 1.0
+            print(f"Case Forks: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
 
-    # Case Commits
-    probability_level += probabilities[MOVE_COMMITS]
-    if probability_level>random_level:
-        new_repo = get_random_repo_from_commits(current_repo)
-        random_level = 1.0
-        print(f"Case Commits: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
+        # Case Commits
+        probability_level += probabilities[MOVE_COMMITS]
+        if probability_level>random_level:
+            new_repo = get_random_repo_from_commits(current_repo)
+            random_level = 1.0
+            print(f"Case Commits: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
 
-    # Case Stack
-    probability_level += probabilities[MOVE_STACK]
-    if probability_level>random_level:
-        new_repo = get_random_repo_from_repository_stack(current_repo)
-        print(f"Case Stack: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
+        # Case Stack
+        probability_level += probabilities[MOVE_STACK]
+        if probability_level>random_level:
+            new_repo = get_random_repo_from_repository_stack(current_repo)
+            print(f"Case Stack: Current repo is {current_repo.full_name} new repo is {new_repo.full_name}")
 
-    return new_repo
+        return new_repo
 
+    except:
+        return current_repo

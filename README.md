@@ -74,7 +74,7 @@ GITHUB_USER="..."
 GITHUB_API_KEY="..."
 
 ## Results
-### Pure random trajectories 
+### Without reinforcement learning
 In this case the algorithm moves from repositories to repositories using fixed and predetermined probabilities to decide between each of the seven possible actions.
 
 In average GitScrap discovers 0.28 repositories each second which is not enough to cover the current growth rate of GitHub. An hourly pattern can be observed on the discovery speed. It corresponds to an improvable method to account for GitHub API speed limitation. 
@@ -91,25 +91,163 @@ Modifying the set of action probabilities does not seem to have an observable im
 
 ![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_any_score_2.png?raw=true)
 
-List of 15 repositories with scores greater than 5 found in 11 hours of scraping:
-* ant-design/ant-design
-* atralice/Curso.Prep.Henry
-* bailicangdu/vue2-elm
-* BVLC/caffe
-* EbookFoundation/free-programming-books
-* facebook/create-react-app
-* geekcomputers/Python
-* github/docs
-* golang/go
-* jwasham/coding-interview-university
-* microsoft/vscode
-* nightscout/cgm-remote-monitor
-* scikit-learn/scikit-learn
-* tensorflow/tensorflow
-* vinta/awesome-python
+#### Statistics for all test runs combined
+* Repositories found: 12441.
+* Distinct repositories found: 11289 (90.7 %).
+* Distinct repositories with a score greater than 3: 733 (5.9 %).
+* Distinct repositories with a score greater than 4: 282 (2.3 %).
+* Distinct repositories with a score greater than 5: 53 (0.4 %).
+* Distinct repositories with a score greater than 6: 3 (0.0 %).
 
+#### Statistics per test runs
+* Session: Classic sequence probability vector [0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.1]
+** Processing time: 39927 seconds.
+** Repositories found: 4522 at a speed of 0.113 repository/second.
+** Distinct repositories found: 4021 (88.9 %) at a speed of 0.101 repository/second.
+* Session: Classic sequence probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]
+** Processing time: 20555 seconds.
+** Repositories found: 2132 at a speed of 0.104 repository/second.
+** Distinct repositories found: 2016 (94.6 %) at a speed of 0.098 repository/second.
+* Session: Stack size 1000 and probability vector [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1]
+** Processing time: 26688 seconds.
+** Repositories found: 2693 at a speed of 0.101 repository/second.
+** Distinct repositories found: 2504 (93.0 %) at a speed of 0.094 repository/second.
+* Session: Stack size 100 and probability vector [0.19, 0.1, 0.1, 0.2, 0.2, 0.2, 0.01]
+** Processing time: 30959 seconds.
+** Repositories found: 3073 at a speed of 0.099 repository/second.
+** Distinct repositories found: 2773 (90.2 %) at a speed of 0.090 repository/second.
+* Session: Reference repositories
+** Processing time: 226 seconds.
+** Repositories found: 21 at a speed of 0.093 repository/second.
+** Distinct repositories found: 21 (100.0 %) at a speed of 0.093 repository/second.
+
+#### Reference repositories
+* Repository https://github.com/torvalds/linux scores 5.7 and has 1060197 commits
+* Repository https://github.com/strapi/strapi scores 5.0 and has 19755 commits
+* Repository https://github.com/traefik/traefik scores 4.9 and has 4219 commits
+* Repository https://github.com/hoppscotch/hoppscotch scores 4.8 and has 3943 commits
+* Repository https://github.com/n8n-io/n8n scores 4.6 and has 5221 commits
+* Repository https://github.com/matomo-org/matomo scores 4.6 and has 28046 commits
+* Repository https://github.com/nocodb/nocodb scores 4.5 and has 1789 commits
+* Repository https://github.com/meilisearch/MeiliSearch scores 4.4 and has 3223 commits
+* Repository https://github.com/ory/hydra scores 4.4 and has 2889 commits
+* Repository https://github.com/wasmerio/wasmer scores 4.2 and has 11101 commits
+* Repository https://github.com/airbytehq/airbyte scores 4.2 and has 4389 commits
+* Repository https://github.com/gitpod-io/gitpod scores 4.1 and has 3096 commits
+* Repository https://github.com/quickwit-inc/tantivy scores 4.0 and has 2135 commits
+* Repository https://github.com/snyk/snyk scores 3.9 and has 4392 commits
+* Repository https://github.com/Teevity/ice scores 3.9 and has 251 commits
+* Repository https://github.com/polyaxon/polyaxon scores 3.8 and has 9659 commits
+* Repository https://github.com/chaoss/augur scores 3.8 and has 6774 commits
+* Repository https://github.com/frontity/frontity scores 3.7 and has 5806 commits
+* Repository https://github.com/kinvolk/inspektor-gadget scores 3.2 and has 879 commits
+* Repository https://github.com/robocorp/rpaframework scores 3.2 and has 1587 commits
+* Repository https://github.com/scilab/scilab scores 3.2 and has 55253 commits
+
+#### Top 100 repositories found
+* Repository https://github.com/jtleek/datasharing scores 6.4
+* Repository https://github.com/octocat/Spoon-Knife scores 6.1
+* Repository https://github.com/tensorflow/tensorflow scores 6.0
+* Repository https://github.com/twbs/bootstrap scores 6.0
+* Repository https://github.com/github/gitignore scores 5.9
+* Repository https://github.com/jwasham/coding-interview-university scores 5.9
+* Repository https://github.com/EbookFoundation/free-programming-books scores 5.8
+* Repository https://github.com/nightscout/cgm-remote-monitor scores 5.8
+* Repository https://github.com/torvalds/linux scores 5.7
+* Repository https://github.com/tensorflow/models scores 5.7
+* Repository https://github.com/996icu/996.ICU scores 5.7
+* Repository https://github.com/firstcontributions/first-contributions scores 5.6
+* Repository https://github.com/ant-design/ant-design scores 5.6
+* Repository https://github.com/kubernetes/kubernetes scores 5.6
+* Repository https://github.com/public-apis/public-apis scores 5.6
+* Repository https://github.com/github/docs scores 5.6
+* Repository https://github.com/trekhleb/javascript-algorithms scores 5.5
+* Repository https://github.com/airbnb/javascript scores 5.5
+* Repository https://github.com/microsoft/vscode scores 5.5
+* Repository https://github.com/flutter/flutter scores 5.5
+* Repository https://github.com/mui-org/material-ui scores 5.5
+* Repository https://github.com/facebook/create-react-app scores 5.5
+* Repository https://github.com/vinta/awesome-python scores 5.5
+* Repository https://github.com/scikit-learn/scikit-learn scores 5.4
+* Repository https://github.com/jquery/jquery scores 5.4
+* Repository https://github.com/rails/rails scores 5.4
+* Repository https://github.com/golang/go scores 5.4
+* Repository https://github.com/shadowsocks/shadowsocks scores 5.4
+* Repository https://github.com/atom/atom scores 5.4
+* Repository https://github.com/BVLC/caffe scores 5.3
+* Repository https://github.com/hakimel/reveal.js scores 5.3
+* Repository https://github.com/ColorlibHQ/AdminLTE scores 5.3
+* Repository https://github.com/pytorch/pytorch scores 5.3
+* Repository https://github.com/atralice/Curso.Prep.Henry scores 5.3
+* Repository https://github.com/MarlinFirmware/Marlin scores 5.2
+* Repository https://github.com/ethereum/go-ethereum scores 5.2
+* Repository https://github.com/bailicangdu/vue2-elm scores 5.2
+* Repository https://github.com/gatsbyjs/gatsby scores 5.2
+* Repository https://github.com/ageron/handson-ml scores 5.2
+* Repository https://github.com/remix-run/react-router scores 5.1
+* Repository https://github.com/geekcomputers/Python scores 5.1
+* Repository https://github.com/godotengine/godot scores 5.1
+* Repository https://github.com/swisskyrepo/PayloadsAllTheThings scores 5.1
+* Repository https://github.com/chrislgarry/Apollo-11 scores 5.1
+* Repository https://github.com/mathiasbynens/dotfiles scores 5.1
+* Repository https://github.com/discourse/discourse scores 5.0
+* Repository https://github.com/ripienaar/free-for-dev scores 5.0
+* Repository https://github.com/kubernetes/website scores 5.0
+* Repository https://github.com/trustwallet/assets scores 5.0
+* Repository https://github.com/enaqx/awesome-react scores 5.0
+* Repository https://github.com/hashicorp/terraform scores 5.0
+* Repository https://github.com/RocketChat/Rocket.Chat scores 5.0
+* Repository https://github.com/CocoaPods/Specs scores 5.0
+* Repository https://github.com/magento/magento2 scores 5.0
+* Repository https://github.com/udacity/create-your-own-adventure scores 5.0
+* Repository https://github.com/sindresorhus/awesome-nodejs scores 5.0
+* Repository https://github.com/fffaraz/awesome-cpp scores 5.0
+* Repository https://github.com/strapi/strapi scores 5.0
+* Repository https://github.com/openssl/openssl scores 5.0
+* Repository https://github.com/facebook/jest scores 5.0
+* Repository https://github.com/MunGell/awesome-for-beginners scores 5.0
+* Repository https://github.com/elastic/kibana scores 4.9
+* Repository https://github.com/foundation/foundation-sites scores 4.9
+* Repository https://github.com/aosabook/500lines scores 4.9
+* Repository https://github.com/neovim/neovim scores 4.9
+* Repository https://github.com/Micropoor/Micro8 scores 4.9
+* Repository https://github.com/yiisoft/yii2 scores 4.9
+* Repository https://github.com/encode/django-rest-framework scores 4.9
+* Repository https://github.com/yangshun/front-end-interview-handbook scores 4.9
+* Repository https://github.com/mbadolato/iTerm2-Color-Schemes scores 4.9
+* Repository https://github.com/facebookresearch/Detectron scores 4.9
+* Repository https://github.com/isocpp/CppCoreGuidelines scores 4.9
+* Repository https://github.com/traefik/traefik scores 4.9
+* Repository https://github.com/Activiti/Activiti scores 4.9
+* Repository https://github.com/github/personal-website scores 4.9
+* Repository https://github.com/udacity/ud851-Exercises scores 4.9
+* Repository https://github.com/swagger-api/swagger-codegen scores 4.9
+* Repository https://github.com/scwang90/SmartRefreshLayout scores 4.9
+* Repository https://github.com/hashicorp/terraform-provider-aws scores 4.8
+* Repository https://github.com/emberjs/ember.js scores 4.8
+* Repository https://github.com/hashicorp/consul scores 4.8
+* Repository https://github.com/koajs/koa scores 4.8
+* Repository https://github.com/bayandin/awesome-awesomeness scores 4.8
+* Repository https://github.com/sudheerj/reactjs-interview-questions scores 4.8
+* Repository https://github.com/lmoroney/dlaicourse scores 4.8
+* Repository https://github.com/hoppscotch/hoppscotch scores 4.8
+* Repository https://github.com/kaldi-asr/kaldi scores 4.8
+* Repository https://github.com/jenkins-docs/simple-node-js-react-npm-app scores 4.8
+* Repository https://github.com/v8/v8 scores 4.8
+* Repository https://github.com/vuejs/devtools scores 4.8
+* Repository https://github.com/sorin-ionescu/prezto scores 4.8
+* Repository https://github.com/telegramdesktop/tdesktop scores 4.7
+* Repository https://github.com/airbnb/lottie-ios scores 4.7
+* Repository https://github.com/Dreamacro/clash scores 4.7
+* Repository https://github.com/pytorch/fairseq scores 4.7
+* Repository https://github.com/SwiftyJSON/SwiftyJSON scores 4.7
+* Repository https://github.com/udacity/deep-learning-v2-pytorch scores 4.7
+* Repository https://github.com/rms-support-letter/rms-support-letter.github.io scores 4.7
+* Repository https://github.com/iissnan/hexo-theme-next scores 4.7
+* Repository https://github.com/ReactiveX/rxjs scores 4.7
 
 ### Reinforced learning trajectories
+Work in progress...
 
 ## References
 * https://www.janisklaise.com/post/rl-policy-gradients/

@@ -1,6 +1,3 @@
-from scraper.gitrepo import *
-from scraper.gituser import *
-from scraper.connections import *
 from scraper.rl_agent import *
 
 def reset_database():
@@ -23,11 +20,12 @@ def test_case_1():
     print(rows)
 
 def test_case_2():
-    probabilities = [0.19,0.1,0.1,0.2,0.2,0.2,0.01]
+    probabilities = [0.19, 0.1, 0.1, 0.2, 0.2, 0.2, 0.01]
     git_repo = GitRepository("snyk/snyk")
     for number in range(100000):
         git_repo = move_to_next_repository(git_repo, probabilities, f"Stack size 100 and probability vector {str(probabilities)}")
 
+persist_statements(["DELETE FROM repos WHERE tag='Reference repositories'"])
 #reset_database()
-#test_case_1()
-test_case_2()
+test_case_1()
+#test_case_2()

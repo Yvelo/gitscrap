@@ -31,7 +31,7 @@ def get_database_connection():
     else:
         return connection
 
-def get_cursor(select_statement):
+def get_cursor(select_statement) -> object:
     try:
         connection = get_database_connection()
         cursor = connection.cursor()
