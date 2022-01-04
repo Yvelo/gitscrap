@@ -120,131 +120,131 @@ Modifying the set of action probabilities does not seem to have an observable im
     * Processing time: 226 seconds.
     * Repositories found: 21 at a speed of 0.093 repository/second.
     * Distinct repositories found: 21 (100.0 %) at a speed of 0.093 repository/second.
-    
+
 #### Reference repositories
-* Repository https://github.com/torvalds/linux scores 5.7 and has 1060197 commits
-* Repository https://github.com/strapi/strapi scores 5.0 and has 19755 commits
-* Repository https://github.com/traefik/traefik scores 4.9 and has 4219 commits
-* Repository https://github.com/hoppscotch/hoppscotch scores 4.8 and has 3943 commits
-* Repository https://github.com/n8n-io/n8n scores 4.6 and has 5221 commits
-* Repository https://github.com/matomo-org/matomo scores 4.6 and has 28046 commits
-* Repository https://github.com/nocodb/nocodb scores 4.5 and has 1789 commits
-* Repository https://github.com/meilisearch/MeiliSearch scores 4.4 and has 3223 commits
-* Repository https://github.com/ory/hydra scores 4.4 and has 2889 commits
-* Repository https://github.com/wasmerio/wasmer scores 4.2 and has 11101 commits
-* Repository https://github.com/airbytehq/airbyte scores 4.2 and has 4389 commits
-* Repository https://github.com/gitpod-io/gitpod scores 4.1 and has 3096 commits
-* Repository https://github.com/quickwit-inc/tantivy scores 4.0 and has 2135 commits
-* Repository https://github.com/snyk/snyk scores 3.9 and has 4392 commits
-* Repository https://github.com/Teevity/ice scores 3.9 and has 251 commits
-* Repository https://github.com/polyaxon/polyaxon scores 3.8 and has 9659 commits
-* Repository https://github.com/chaoss/augur scores 3.8 and has 6774 commits
-* Repository https://github.com/frontity/frontity scores 3.7 and has 5806 commits
-* Repository https://github.com/kinvolk/inspektor-gadget scores 3.2 and has 879 commits
-* Repository https://github.com/robocorp/rpaframework scores 3.2 and has 1587 commits
-* Repository https://github.com/scilab/scilab scores 3.2 and has 55253 commits
+* Repository https://github.com/torvalds/linux scores 5.7 and consists of 1060197 commits.
+* Repository https://github.com/strapi/strapi scores 5.0 and consists of 19755 commits.
+* Repository https://github.com/traefik/traefik scores 4.9 and consists of 4219 commits.
+* Repository https://github.com/hoppscotch/hoppscotch scores 4.8 and consists of 3943 commits.
+* Repository https://github.com/n8n-io/n8n scores 4.6 and consists of 5221 commits.
+* Repository https://github.com/matomo-org/matomo scores 4.6 and consists of 28046 commits.
+* Repository https://github.com/nocodb/nocodb scores 4.5 and consists of 1789 commits.
+* Repository https://github.com/meilisearch/MeiliSearch scores 4.4 and consists of 3223 commits.
+* Repository https://github.com/ory/hydra scores 4.4 and consists of 2889 commits.
+* Repository https://github.com/wasmerio/wasmer scores 4.2 and consists of 11101 commits.
+* Repository https://github.com/airbytehq/airbyte scores 4.2 and consists of 4389 commits.
+* Repository https://github.com/gitpod-io/gitpod scores 4.1 and consists of 3096 commits.
+* Repository https://github.com/quickwit-inc/tantivy scores 4.0 and consists of 2135 commits.
+* Repository https://github.com/snyk/snyk scores 3.9 and consists of 4392 commits.
+* Repository https://github.com/Teevity/ice scores 3.9 and consists of 251 commits.
+* Repository https://github.com/polyaxon/polyaxon scores 3.8 and consists of 9659 commits.
+* Repository https://github.com/chaoss/augur scores 3.8 and consists of 6774 commits.
+* Repository https://github.com/frontity/frontity scores 3.7 and consists of 5806 commits.
+* Repository https://github.com/kinvolk/inspektor-gadget scores 3.2 and consists of 879 commits.
+* Repository https://github.com/robocorp/rpaframework scores 3.2 and consists of 1587 commits.
+* Repository https://github.com/scilab/scilab scores 3.2 and consists of 55253 commits.
 
 #### Top 100 repositories found
-* Repository https://github.com/jtleek/datasharing scores 6.4
-* Repository https://github.com/octocat/Spoon-Knife scores 6.1
-* Repository https://github.com/tensorflow/tensorflow scores 6.0
-* Repository https://github.com/twbs/bootstrap scores 6.0
-* Repository https://github.com/github/gitignore scores 5.9
-* Repository https://github.com/jwasham/coding-interview-university scores 5.9
-* Repository https://github.com/EbookFoundation/free-programming-books scores 5.8
-* Repository https://github.com/nightscout/cgm-remote-monitor scores 5.8
-* Repository https://github.com/torvalds/linux scores 5.7
-* Repository https://github.com/tensorflow/models scores 5.7
-* Repository https://github.com/996icu/996.ICU scores 5.7
-* Repository https://github.com/firstcontributions/first-contributions scores 5.6
-* Repository https://github.com/ant-design/ant-design scores 5.6
-* Repository https://github.com/kubernetes/kubernetes scores 5.6
-* Repository https://github.com/public-apis/public-apis scores 5.6
-* Repository https://github.com/github/docs scores 5.6
-* Repository https://github.com/trekhleb/javascript-algorithms scores 5.5
-* Repository https://github.com/airbnb/javascript scores 5.5
-* Repository https://github.com/microsoft/vscode scores 5.5
-* Repository https://github.com/flutter/flutter scores 5.5
-* Repository https://github.com/mui-org/material-ui scores 5.5
-* Repository https://github.com/facebook/create-react-app scores 5.5
-* Repository https://github.com/vinta/awesome-python scores 5.5
-* Repository https://github.com/scikit-learn/scikit-learn scores 5.4
-* Repository https://github.com/jquery/jquery scores 5.4
-* Repository https://github.com/rails/rails scores 5.4
-* Repository https://github.com/golang/go scores 5.4
-* Repository https://github.com/shadowsocks/shadowsocks scores 5.4
-* Repository https://github.com/atom/atom scores 5.4
-* Repository https://github.com/BVLC/caffe scores 5.3
-* Repository https://github.com/hakimel/reveal.js scores 5.3
-* Repository https://github.com/ColorlibHQ/AdminLTE scores 5.3
-* Repository https://github.com/pytorch/pytorch scores 5.3
-* Repository https://github.com/atralice/Curso.Prep.Henry scores 5.3
-* Repository https://github.com/MarlinFirmware/Marlin scores 5.2
-* Repository https://github.com/ethereum/go-ethereum scores 5.2
-* Repository https://github.com/bailicangdu/vue2-elm scores 5.2
-* Repository https://github.com/gatsbyjs/gatsby scores 5.2
-* Repository https://github.com/ageron/handson-ml scores 5.2
-* Repository https://github.com/remix-run/react-router scores 5.1
-* Repository https://github.com/geekcomputers/Python scores 5.1
-* Repository https://github.com/godotengine/godot scores 5.1
-* Repository https://github.com/swisskyrepo/PayloadsAllTheThings scores 5.1
-* Repository https://github.com/chrislgarry/Apollo-11 scores 5.1
-* Repository https://github.com/mathiasbynens/dotfiles scores 5.1
-* Repository https://github.com/discourse/discourse scores 5.0
-* Repository https://github.com/ripienaar/free-for-dev scores 5.0
-* Repository https://github.com/kubernetes/website scores 5.0
-* Repository https://github.com/trustwallet/assets scores 5.0
-* Repository https://github.com/enaqx/awesome-react scores 5.0
-* Repository https://github.com/hashicorp/terraform scores 5.0
-* Repository https://github.com/RocketChat/Rocket.Chat scores 5.0
-* Repository https://github.com/CocoaPods/Specs scores 5.0
-* Repository https://github.com/magento/magento2 scores 5.0
-* Repository https://github.com/udacity/create-your-own-adventure scores 5.0
-* Repository https://github.com/sindresorhus/awesome-nodejs scores 5.0
-* Repository https://github.com/fffaraz/awesome-cpp scores 5.0
-* Repository https://github.com/strapi/strapi scores 5.0
-* Repository https://github.com/openssl/openssl scores 5.0
-* Repository https://github.com/facebook/jest scores 5.0
-* Repository https://github.com/MunGell/awesome-for-beginners scores 5.0
-* Repository https://github.com/elastic/kibana scores 4.9
-* Repository https://github.com/foundation/foundation-sites scores 4.9
-* Repository https://github.com/aosabook/500lines scores 4.9
-* Repository https://github.com/neovim/neovim scores 4.9
-* Repository https://github.com/Micropoor/Micro8 scores 4.9
-* Repository https://github.com/yiisoft/yii2 scores 4.9
-* Repository https://github.com/encode/django-rest-framework scores 4.9
-* Repository https://github.com/yangshun/front-end-interview-handbook scores 4.9
-* Repository https://github.com/mbadolato/iTerm2-Color-Schemes scores 4.9
-* Repository https://github.com/facebookresearch/Detectron scores 4.9
-* Repository https://github.com/isocpp/CppCoreGuidelines scores 4.9
-* Repository https://github.com/traefik/traefik scores 4.9
-* Repository https://github.com/Activiti/Activiti scores 4.9
-* Repository https://github.com/github/personal-website scores 4.9
-* Repository https://github.com/udacity/ud851-Exercises scores 4.9
-* Repository https://github.com/swagger-api/swagger-codegen scores 4.9
-* Repository https://github.com/scwang90/SmartRefreshLayout scores 4.9
-* Repository https://github.com/hashicorp/terraform-provider-aws scores 4.8
-* Repository https://github.com/emberjs/ember.js scores 4.8
-* Repository https://github.com/hashicorp/consul scores 4.8
-* Repository https://github.com/koajs/koa scores 4.8
-* Repository https://github.com/bayandin/awesome-awesomeness scores 4.8
-* Repository https://github.com/sudheerj/reactjs-interview-questions scores 4.8
-* Repository https://github.com/lmoroney/dlaicourse scores 4.8
-* Repository https://github.com/hoppscotch/hoppscotch scores 4.8
-* Repository https://github.com/kaldi-asr/kaldi scores 4.8
-* Repository https://github.com/jenkins-docs/simple-node-js-react-npm-app scores 4.8
-* Repository https://github.com/v8/v8 scores 4.8
-* Repository https://github.com/vuejs/devtools scores 4.8
-* Repository https://github.com/sorin-ionescu/prezto scores 4.8
-* Repository https://github.com/telegramdesktop/tdesktop scores 4.7
-* Repository https://github.com/airbnb/lottie-ios scores 4.7
-* Repository https://github.com/Dreamacro/clash scores 4.7
-* Repository https://github.com/pytorch/fairseq scores 4.7
-* Repository https://github.com/SwiftyJSON/SwiftyJSON scores 4.7
-* Repository https://github.com/udacity/deep-learning-v2-pytorch scores 4.7
-* Repository https://github.com/rms-support-letter/rms-support-letter.github.io scores 4.7
-* Repository https://github.com/iissnan/hexo-theme-next scores 4.7
-* Repository https://github.com/ReactiveX/rxjs scores 4.7
+* Repository https://github.com/jtleek/datasharing scores 6.4 consists of 29 commits and has been found 2 times.
+* Repository https://github.com/octocat/Spoon-Knife scores 6.1 consists of 3 commits and has been found 1 time.
+* Repository https://github.com/tensorflow/tensorflow scores 6.0 consists of 123266 commits and has been found 1 time.
+* Repository https://github.com/twbs/bootstrap scores 6.0 consists of 21373 commits and has been found 2 times.
+* Repository https://github.com/github/gitignore scores 5.9 consists of 3486 commits and has been found 1 time.
+* Repository https://github.com/jwasham/coding-interview-university scores 5.9 consists of 1822 commits and has been found 1 time.
+* Repository https://github.com/EbookFoundation/free-programming-books scores 5.8 consists of 6968 commits and has been found 1 time.
+* Repository https://github.com/nightscout/cgm-remote-monitor scores 5.8 consists of 5915 commits and has been found 4 times.
+* Repository https://github.com/torvalds/linux scores 5.7 consists of 1060197 commits and has been found 2 times.
+* Repository https://github.com/tensorflow/models scores 5.7 consists of 7676 commits and has been found 1 time.
+* Repository https://github.com/996icu/996.ICU scores 5.7 consists of 3019 commits and has been found 1 time.
+* Repository https://github.com/firstcontributions/first-contributions scores 5.6 consists of 35998 commits and has been found 2 times.
+* Repository https://github.com/ant-design/ant-design scores 5.6 consists of 21429 commits and has been found 2 times.
+* Repository https://github.com/kubernetes/kubernetes scores 5.6 consists of 105561 commits and has been found 1 time.
+* Repository https://github.com/public-apis/public-apis scores 5.6 consists of 4213 commits and has been found 1 time.
+* Repository https://github.com/github/docs scores 5.6 consists of 19481 commits and has been found 1 time.
+* Repository https://github.com/trekhleb/javascript-algorithms scores 5.5 consists of 962 commits and has been found 2 times.
+* Repository https://github.com/airbnb/javascript scores 5.5 consists of 1914 commits and has been found 2 times.
+* Repository https://github.com/microsoft/vscode scores 5.5 consists of 91053 commits and has been found 1 time.
+* Repository https://github.com/flutter/flutter scores 5.5 consists of 27041 commits and has been found 2 times.
+* Repository https://github.com/mui-org/material-ui scores 5.5 consists of 18765 commits and has been found 1 time.
+* Repository https://github.com/facebook/create-react-app scores 5.5 consists of 2745 commits and has been found 4 times.
+* Repository https://github.com/vinta/awesome-python scores 5.5 consists of 1624 commits and has been found 1 time.
+* Repository https://github.com/scikit-learn/scikit-learn scores 5.4 consists of 27703 commits and has been found 2 times.
+* Repository https://github.com/jquery/jquery scores 5.4 consists of 6549 commits and has been found 1 time.
+* Repository https://github.com/rails/rails scores 5.4 consists of 82576 commits and has been found 2 times.
+* Repository https://github.com/golang/go scores 5.4 consists of 51038 commits and has been found 2 times.
+* Repository https://github.com/shadowsocks/shadowsocks scores 5.4 consists of 1 commits and has been found 1 time.
+* Repository https://github.com/atom/atom scores 5.4 consists of 38462 commits and has been found 2 times.
+* Repository https://github.com/BVLC/caffe scores 5.3 consists of 4156 commits and has been found 2 times.
+* Repository https://github.com/hakimel/reveal.js scores 5.3 consists of 2861 commits and has been found 1 time.
+* Repository https://github.com/ColorlibHQ/AdminLTE scores 5.3 consists of 2381 commits and has been found 1 time.
+* Repository https://github.com/pytorch/pytorch scores 5.3 consists of 42702 commits and has been found 2 times.
+* Repository https://github.com/atralice/Curso.Prep.Henry scores 5.3 consists of 125 commits and has been found 1 time.
+* Repository https://github.com/MarlinFirmware/Marlin scores 5.2 consists of 19208 commits and has been found 3 times.
+* Repository https://github.com/ethereum/go-ethereum scores 5.2 consists of 13077 commits and has been found 1 time.
+* Repository https://github.com/bailicangdu/vue2-elm scores 5.2 consists of 505 commits and has been found 1 time.
+* Repository https://github.com/gatsbyjs/gatsby scores 5.2 consists of 19621 commits and has been found 2 times.
+* Repository https://github.com/ageron/handson-ml scores 5.2 consists of 497 commits and has been found 1 time.
+* Repository https://github.com/remix-run/react-router scores 5.1 consists of 5188 commits and has been found 1 time.
+* Repository https://github.com/geekcomputers/Python scores 5.1 consists of 2582 commits and has been found 2 times.
+* Repository https://github.com/godotengine/godot scores 5.1 consists of 39979 commits and has been found 1 time.
+* Repository https://github.com/swisskyrepo/PayloadsAllTheThings scores 5.1 consists of 1321 commits and has been found 1 time.
+* Repository https://github.com/chrislgarry/Apollo-11 scores 5.1 consists of 516 commits and has been found 1 time.
+* Repository https://github.com/mathiasbynens/dotfiles scores 5.1 consists of 761 commits and has been found 1 time.
+* Repository https://github.com/discourse/discourse scores 5.0 consists of 43879 commits and has been found 2 times.
+* Repository https://github.com/ripienaar/free-for-dev scores 5.0 consists of 3915 commits and has been found 1 time.
+* Repository https://github.com/kubernetes/website scores 5.0 consists of 27396 commits and has been found 1 time.
+* Repository https://github.com/trustwallet/assets scores 5.0 consists of 12743 commits and has been found 1 time.
+* Repository https://github.com/enaqx/awesome-react scores 5.0 consists of 1925 commits and has been found 1 time.
+* Repository https://github.com/hashicorp/terraform scores 5.0 consists of 29350 commits and has been found 2 times.
+* Repository https://github.com/RocketChat/Rocket.Chat scores 5.0 consists of 20771 commits and has been found 1 time.
+* Repository https://github.com/CocoaPods/Specs scores 5.0 consists of 639713 commits and has been found 1 time.
+* Repository https://github.com/magento/magento2 scores 5.0 consists of 126252 commits and has been found 1 time.
+* Repository https://github.com/udacity/create-your-own-adventure scores 5.0 consists of 12664 commits and has been found 1 time.
+* Repository https://github.com/sindresorhus/awesome-nodejs scores 5.0 consists of 821 commits and has been found 1 time.
+* Repository https://github.com/fffaraz/awesome-cpp scores 5.0 consists of 1469 commits and has been found 1 time.
+* Repository https://github.com/strapi/strapi scores 5.0 consists of 19755 commits and has been found 1 time.
+* Repository https://github.com/openssl/openssl scores 5.0 consists of 30715 commits and has been found 1 time.
+* Repository https://github.com/facebook/jest scores 5.0 consists of 5749 commits and has been found 1 time.
+* Repository https://github.com/MunGell/awesome-for-beginners scores 5.0 consists of 430 commits and has been found 2 times.
+* Repository https://github.com/elastic/kibana scores 4.9 consists of 49383 commits and has been found 1 time.
+* Repository https://github.com/foundation/foundation-sites scores 4.9 consists of 17200 commits and has been found 1 time.
+* Repository https://github.com/aosabook/500lines scores 4.9 consists of 3297 commits and has been found 1 time.
+* Repository https://github.com/neovim/neovim scores 4.9 consists of 19859 commits and has been found 1 time.
+* Repository https://github.com/Micropoor/Micro8 scores 4.9 consists of 127 commits and has been found 1 time.
+* Repository https://github.com/yiisoft/yii2 scores 4.9 consists of 19907 commits and has been found 1 time.
+* Repository https://github.com/encode/django-rest-framework scores 4.9 consists of 8500 commits and has been found 1 time.
+* Repository https://github.com/yangshun/front-end-interview-handbook scores 4.9 consists of 527 commits and has been found 1 time.
+* Repository https://github.com/mbadolato/iTerm2-Color-Schemes scores 4.9 consists of 622 commits and has been found 1 time.
+* Repository https://github.com/facebookresearch/Detectron scores 4.9 consists of 141 commits and has been found 1 time.
+* Repository https://github.com/isocpp/CppCoreGuidelines scores 4.9 consists of 1997 commits and has been found 1 time.
+* Repository https://github.com/traefik/traefik scores 4.9 consists of 4219 commits and has been found 1 time.
+* Repository https://github.com/Activiti/Activiti scores 4.9 consists of 10774 commits and has been found 1 time.
+* Repository https://github.com/github/personal-website scores 4.9 consists of 192 commits and has been found 1 time.
+* Repository https://github.com/udacity/ud851-Exercises scores 4.9 consists of 48 commits and has been found 1 time.
+* Repository https://github.com/swagger-api/swagger-codegen scores 4.9 consists of 11486 commits and has been found 1 time.
+* Repository https://github.com/scwang90/SmartRefreshLayout scores 4.9 consists of 1092 commits and has been found 1 time.
+* Repository https://github.com/hashicorp/terraform-provider-aws scores 4.8 consists of 41684 commits and has been found 2 times.
+* Repository https://github.com/emberjs/ember.js scores 4.8 consists of 21052 commits and has been found 1 time.
+* Repository https://github.com/hashicorp/consul scores 4.8 consists of 16158 commits and has been found 1 time.
+* Repository https://github.com/koajs/koa scores 4.8 consists of 1141 commits and has been found 1 time.
+* Repository https://github.com/bayandin/awesome-awesomeness scores 4.8 consists of 572 commits and has been found 2 times.
+* Repository https://github.com/sudheerj/reactjs-interview-questions scores 4.8 consists of 304 commits and has been found 1 time.
+* Repository https://github.com/lmoroney/dlaicourse scores 4.8 consists of 404 commits and has been found 2 times.
+* Repository https://github.com/hoppscotch/hoppscotch scores 4.8 consists of 3943 commits and has been found 1 time.
+* Repository https://github.com/kaldi-asr/kaldi scores 4.8 consists of 9224 commits and has been found 1 time.
+* Repository https://github.com/jenkins-docs/simple-node-js-react-npm-app scores 4.8 consists of 16 commits and has been found 1 time.
+* Repository https://github.com/v8/v8 scores 4.8 consists of 71968 commits and has been found 1 time.
+* Repository https://github.com/vuejs/devtools scores 4.8 consists of 1842 commits and has been found 1 time.
+* Repository https://github.com/sorin-ionescu/prezto scores 4.8 consists of 1972 commits and has been found 1 time.
+* Repository https://github.com/telegramdesktop/tdesktop scores 4.7 consists of 11428 commits and has been found 1 time.
+* Repository https://github.com/airbnb/lottie-ios scores 4.7 consists of 951 commits and has been found 1 time.
+* Repository https://github.com/Dreamacro/clash scores 4.7 consists of 719 commits and has been found 1 time.
+* Repository https://github.com/pytorch/fairseq scores 4.7 consists of 2088 commits and has been found 1 time.
+* Repository https://github.com/SwiftyJSON/SwiftyJSON scores 4.7 consists of 739 commits and has been found 1 time.
+* Repository https://github.com/udacity/deep-learning-v2-pytorch scores 4.7 consists of 377 commits and has been found 1 time.
+* Repository https://github.com/rms-support-letter/rms-support-letter.github.io scores 4.7 consists of 13850 commits and has been found 1 time.
+* Repository https://github.com/iissnan/hexo-theme-next scores 4.7 consists of 1808 commits and has been found 1 time.
+* Repository https://github.com/ReactiveX/rxjs scores 4.7 consists of 4910 commits and has been found 1 time.
 
 ### Reinforced learning trajectories
 Work in progress...
