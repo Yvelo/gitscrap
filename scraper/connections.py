@@ -79,7 +79,7 @@ def get_github_collection_count(url):
         wait_for_githup_api_limit(response.headers)
         try:
             collection_count = int(response.headers["Link"][response.headers["Link"].find("&page=",response.headers["Link"].find("&page=")+1)+6:response.headers["Link"].find(">;",response.headers["Link"].find(">;")+1)])
-        except:
+        except Exception:
             collection_count = 0 if isinstance(response.json(),type(None)) else len(response.json())
         return collection_count
     except Exception as ex:

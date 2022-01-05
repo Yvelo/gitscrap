@@ -37,7 +37,7 @@ def get_random_repo_from_owner(owner, current_repo):
         if new_repo_full_name == current_repo.full_name:
             new_repo_full_name = get_github_collection_item(f"https://api.github.com/users/{owner.login}/repos", (item_number + 1) % owner.repos_count)["full_name"]
         return GitRepository(new_repo_full_name, owner)
-    except:
+    except Exception:
         return current_repo
 
 def get_random_repo_from_followers(owner, current_repo,):
@@ -46,7 +46,7 @@ def get_random_repo_from_followers(owner, current_repo,):
         follower_login = get_github_collection_item(f"https://api.github.com/users/{owner.login}/followers", item_number)["login"]
         follower = GitUser(follower_login)
         return get_random_repo_from_owner(follower, current_repo)
-    except:
+    except Exception:
         return current_repo
 
 def get_random_repo_from_following(owner, current_repo):
@@ -55,7 +55,7 @@ def get_random_repo_from_following(owner, current_repo):
         following_login = get_github_collection_item(f"https://api.github.com/users/{owner.login}/following", item_number)["login"]
         following = GitUser(following_login)
         return get_random_repo_from_owner(following, current_repo)
-    except:
+    except Exception:
         return current_repo
 
 
@@ -64,7 +64,7 @@ def get_random_repo_from_forks(current_repo):
         item_number = int(current_repo.forks * np.random.rand(1)[0])
         fork_full_name = get_github_collection_item(f"https://api.github.com/repos/{current_repo.full_name}/forks", item_number)["full_name"]
         return GitRepository(fork_full_name)
-    except:
+    except Exception:
         return current_repo
 
 def get_random_repo_from_commits(current_repo):
@@ -72,10 +72,10 @@ def get_random_repo_from_commits(current_repo):
         item_number = int(current_repo.commits_count * np.random.rand(1)[0])
         try:
             committer_login = get_github_collection_item(f"https://api.github.com/repos/{current_repo.full_name}/commits", item_number)["committer"]["login"]
-        except:
+        except Exception:
             try:
                 committer_login = get_github_collection_item(f"https://api.github.com/repos/{current_repo.full_name}/commits", item_number)["author"]["login"]
-            except:
+            except Exception:
                 committer_login = current_repo.owner_login
         committer = GitUser(committer_login)
         return get_random_repo_from_owner(committer, current_repo)
@@ -140,5 +140,5 @@ def move_to_next_repository(current_repo, probabilities, tag):
 
         return new_repo
 
-    except:
+    except Exception:
         return current_repo

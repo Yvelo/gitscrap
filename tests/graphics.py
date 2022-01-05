@@ -14,7 +14,7 @@ def repository_creation_speed(tag):
     for event_log in repo_creation_log:
         try:
             duplicates[event_log[0]] += 1
-        except:
+        except Exception:
             duplicates[event_log[0]] = 1
             new_repo +=1
             x.append(calendar.timegm(event_log[1].timetuple()))

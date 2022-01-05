@@ -60,7 +60,7 @@ class GitRepository:
     def score(self):
         try:
             return math.log10(self.stargazers_count+self.forks*10+self.commits_count/100+self.collaborators_count*10+self.events_count+self.branches_count+1)
-        except:
+        except Exception:
             return 0
 
     def log(self, tag):
