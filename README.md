@@ -92,11 +92,11 @@ Modifying the set of action probabilities does not seem to have an observable im
 ![alt text](https://github.com/Yvelo/gitscrap/blob/main/rds_any_score_2.png?raw=true)
 
 #### Statistics for all test runs combined
-* Repositories found: 12441.
-* Distinct repositories found: 11289 (90.7 %).
-* Distinct repositories with a score greater than 3: 733 (5.9 %).
-* Distinct repositories with a score greater than 4: 282 (2.3 %).
-* Distinct repositories with a score greater than 5: 53 (0.4 %).
+* Repositories found: 20283.
+* Distinct repositories found: 18259 (90.0 %).
+* Distinct repositories with a score greater than 3: 1243 (6.1 %).
+* Distinct repositories with a score greater than 4: 451 (2.2 %).
+* Distinct repositories with a score greater than 5: 83 (0.4 %).
 * Distinct repositories with a score greater than 6: 3 (0.0 %).
 
 #### Statistics per test runs
@@ -120,6 +120,10 @@ Modifying the set of action probabilities does not seem to have an observable im
     * Processing time: 226 seconds.
     * Repositories found: 21 at a speed of 0.093 repository/second.
     * Distinct repositories found: 21 (100.0 %) at a speed of 0.093 repository/second.
+* Session: Stack size 1000 and probability vector [0.19, 0.1, 0.1, 0.2, 0.2, 0.2, 0.01]
+    * Processing time: 79289 seconds.
+    * Repositories found: 7842 at a speed of 0.099 repository/second.
+    * Distinct repositories found: 7024 (89.6 %) at a speed of 0.089 repository/second.
 
 #### Reference repositories
 * Repository https://github.com/torvalds/linux (score: 5.7, commits: 1060197, forks: 40484, found: 1).
@@ -145,108 +149,109 @@ Modifying the set of action probabilities does not seem to have an observable im
 * Repository https://github.com/scilab/scilab (score: 3.2, commits: 55253, forks: 67, found: 1).
 
 #### Top 100 repositories found
-* Repository https://github.com/jtleek/datasharing (score: 6.4, commits: 29, forks: 239571, found: 2).
+* Repository https://github.com/jtleek/datasharing (score: 6.4, commits: 29, forks: 239621, found: 3).
 * Repository https://github.com/octocat/Spoon-Knife (score: 6.1, commits: 3, forks: 121096, found: 1).
 * Repository https://github.com/tensorflow/tensorflow (score: 6.0, commits: 123266, forks: 86035, found: 1).
-* Repository https://github.com/twbs/bootstrap (score: 6.0, commits: 21373, forks: 75654, found: 2).
-* Repository https://github.com/github/gitignore (score: 5.9, commits: 3486, forks: 71376, found: 1).
+* Repository https://github.com/twbs/bootstrap (score: 6.0, commits: 21375, forks: 75665, found: 6).
+* Repository https://github.com/github/gitignore (score: 5.9, commits: 3486, forks: 71403, found: 3).
 * Repository https://github.com/jwasham/coding-interview-university (score: 5.9, commits: 1822, forks: 54448, found: 1).
 * Repository https://github.com/EbookFoundation/free-programming-books (score: 5.8, commits: 6968, forks: 46707, found: 1).
 * Repository https://github.com/nightscout/cgm-remote-monitor (score: 5.8, commits: 5915, forks: 60763, found: 4).
-* Repository https://github.com/torvalds/linux (score: 5.7, commits: 1060197, forks: 40484, found: 2).
-* Repository https://github.com/tensorflow/models (score: 5.7, commits: 7676, forks: 45316, found: 1).
+* Repository https://github.com/rdpeng/ExData_Plotting1 (score: 5.7, commits: 3, forks: 56120, found: 1).
+* Repository https://github.com/facebook/react (score: 5.7, commits: 14701, forks: 36589, found: 1).
+* Repository https://github.com/torvalds/linux (score: 5.7, commits: 1060197, forks: 40495, found: 5).
+* Repository https://github.com/tensorflow/models (score: 5.7, commits: 7682, forks: 45322, found: 2).
+* Repository https://github.com/vuejs/vue (score: 5.7, commits: 3220, forks: 31087, found: 1).
+* Repository https://github.com/eugenp/tutorials (score: 5.7, commits: 23614, forks: 46118, found: 2).
 * Repository https://github.com/996icu/996.ICU (score: 5.7, commits: 3019, forks: 21428, found: 1).
+* Repository https://github.com/TheAlgorithms/Python (score: 5.7, commits: 2382, forks: 33676, found: 1).
 * Repository https://github.com/firstcontributions/first-contributions (score: 5.6, commits: 35998, forks: 41985, found: 2).
 * Repository https://github.com/ant-design/ant-design (score: 5.6, commits: 21429, forks: 31903, found: 2).
 * Repository https://github.com/kubernetes/kubernetes (score: 5.6, commits: 105561, forks: 30811, found: 1).
+* Repository https://github.com/github/docs (score: 5.6, commits: 19491, forks: 36665, found: 4).
 * Repository https://github.com/public-apis/public-apis (score: 5.6, commits: 4213, forks: 19985, found: 1).
-* Repository https://github.com/github/docs (score: 5.6, commits: 19481, forks: 36382, found: 1).
 * Repository https://github.com/trekhleb/javascript-algorithms (score: 5.5, commits: 962, forks: 21551, found: 2).
 * Repository https://github.com/airbnb/javascript (score: 5.5, commits: 1914, forks: 22485, found: 2).
 * Repository https://github.com/microsoft/vscode (score: 5.5, commits: 91053, forks: 21117, found: 1).
 * Repository https://github.com/flutter/flutter (score: 5.5, commits: 27041, forks: 20048, found: 2).
-* Repository https://github.com/mui-org/material-ui (score: 5.5, commits: 18765, forks: 25471, found: 1).
-* Repository https://github.com/facebook/create-react-app (score: 5.5, commits: 2745, forks: 23526, found: 4).
+* Repository https://github.com/mui-org/material-ui (score: 5.5, commits: 18772, forks: 25501, found: 2).
+* Repository https://github.com/facebook/create-react-app (score: 5.5, commits: 2745, forks: 23541, found: 5).
+* Repository https://github.com/django/django (score: 5.5, commits: 30358, forks: 26284, found: 1).
 * Repository https://github.com/vinta/awesome-python (score: 5.5, commits: 1624, forks: 20446, found: 1).
+* Repository https://github.com/DefinitelyTyped/DefinitelyTyped (score: 5.5, commits: 78950, forks: 26415, found: 2).
+* Repository https://github.com/iluwatar/java-design-patterns (score: 5.5, commits: 3188, forks: 22470, found: 1).
+* Repository https://github.com/angular/angular (score: 5.5, commits: 22598, forks: 20651, found: 1).
 * Repository https://github.com/scikit-learn/scikit-learn (score: 5.4, commits: 27703, forks: 22465, found: 2).
+* Repository https://github.com/git/git (score: 5.4, commits: 65438, forks: 22716, found: 1).
 * Repository https://github.com/jquery/jquery (score: 5.4, commits: 6549, forks: 20199, found: 1).
 * Repository https://github.com/rails/rails (score: 5.4, commits: 82576, forks: 19993, found: 2).
+* Repository https://github.com/slatedocs/slate (score: 5.4, commits: 675, forks: 21036, found: 2).
+* Repository https://github.com/keras-team/keras (score: 5.4, commits: 6308, forks: 18961, found: 2).
+* Repository https://github.com/vercel/next.js (score: 5.4, commits: 10221, forks: 15975, found: 1).
 * Repository https://github.com/golang/go (score: 5.4, commits: 51038, forks: 13975, found: 2).
 * Repository https://github.com/shadowsocks/shadowsocks (score: 5.4, commits: 1, forks: 19433, found: 1).
+* Repository https://github.com/wesbos/JavaScript30 (score: 5.4, commits: 376, forks: 20851, found: 1).
 * Repository https://github.com/atom/atom (score: 5.4, commits: 38462, forks: 16751, found: 2).
-* Repository https://github.com/BVLC/caffe (score: 5.3, commits: 4156, forks: 18913, found: 2).
+* Repository https://github.com/BVLC/caffe (score: 5.3, commits: 4156, forks: 18914, found: 4).
 * Repository https://github.com/hakimel/reveal.js (score: 5.3, commits: 2861, forks: 15897, found: 1).
 * Repository https://github.com/ColorlibHQ/AdminLTE (score: 5.3, commits: 2381, forks: 17302, found: 1).
+* Repository https://github.com/CSSEGISandData/COVID-19 (score: 5.3, commits: 5006, forks: 18266, found: 4).
 * Repository https://github.com/pytorch/pytorch (score: 5.3, commits: 42702, forks: 14582, found: 2).
 * Repository https://github.com/atralice/Curso.Prep.Henry (score: 5.3, commits: 125, forks: 19198, found: 1).
+* Repository https://github.com/protocolbuffers/protobuf (score: 5.3, commits: 8918, forks: 13598, found: 1).
+* Repository https://github.com/30-seconds/30-seconds-of-code (score: 5.3, commits: 5397, forks: 9582, found: 1).
+* Repository https://github.com/mmistakes/minimal-mistakes (score: 5.3, commits: 2670, forks: 17654, found: 1).
+* Repository https://github.com/kdn251/interviews (score: 5.2, commits: 445, forks: 11714, found: 1).
 * Repository https://github.com/MarlinFirmware/Marlin (score: 5.2, commits: 19208, forks: 15792, found: 3).
+* Repository https://github.com/chartjs/Chart.js (score: 5.2, commits: 4135, forks: 11326, found: 1).
+* Repository https://github.com/tastejs/todomvc (score: 5.2, commits: 2905, forks: 13923, found: 1).
+* Repository https://github.com/avelino/awesome-go (score: 5.2, commits: 3994, forks: 9350, found: 1).
 * Repository https://github.com/ethereum/go-ethereum (score: 5.2, commits: 13077, forks: 12759, found: 1).
 * Repository https://github.com/bailicangdu/vue2-elm (score: 5.2, commits: 505, forks: 12069, found: 1).
 * Repository https://github.com/gatsbyjs/gatsby (score: 5.2, commits: 19621, forks: 10071, found: 2).
 * Repository https://github.com/ageron/handson-ml (score: 5.2, commits: 497, forks: 12583, found: 1).
-* Repository https://github.com/remix-run/react-router (score: 5.1, commits: 5188, forks: 8851, found: 1).
+* Repository https://github.com/expressjs/express (score: 5.2, commits: 5645, forks: 9403, found: 1).
+* Repository https://github.com/Homebrew/legacy-homebrew (score: 5.2, commits: 63882, forks: 11879, found: 3).
+* Repository https://github.com/scrapy/scrapy (score: 5.1, commits: 9044, forks: 9454, found: 2).
+* Repository https://github.com/remix-run/react-router (score: 5.1, commits: 5189, forks: 8851, found: 2).
 * Repository https://github.com/geekcomputers/Python (score: 5.1, commits: 2582, forks: 10584, found: 2).
 * Repository https://github.com/godotengine/godot (score: 5.1, commits: 39979, forks: 8150, found: 1).
-* Repository https://github.com/swisskyrepo/PayloadsAllTheThings (score: 5.1, commits: 1321, forks: 9133, found: 1).
-* Repository https://github.com/chrislgarry/Apollo-11 (score: 5.1, commits: 516, forks: 6750, found: 1).
+* Repository https://github.com/swisskyrepo/PayloadsAllTheThings (score: 5.1, commits: 1325, forks: 9156, found: 2).
+* Repository https://github.com/etcd-io/etcd (score: 5.1, commits: 17486, forks: 8243, found: 1).
+* Repository https://github.com/chrislgarry/Apollo-11 (score: 5.1, commits: 516, forks: 6750, found: 2).
+* Repository https://github.com/udacity/fullstack-nanodegree-vm (score: 5.1, commits: 60, forks: 11961, found: 2).
 * Repository https://github.com/mathiasbynens/dotfiles (score: 5.1, commits: 761, forks: 8708, found: 1).
+* Repository https://github.com/laravel/framework (score: 5.1, commits: 32252, forks: 8787, found: 1).
+* Repository https://github.com/thedaviddias/Front-End-Checklist (score: 5.1, commits: 694, forks: 5591, found: 1).
 * Repository https://github.com/discourse/discourse (score: 5.0, commits: 43879, forks: 7497, found: 2).
 * Repository https://github.com/ripienaar/free-for-dev (score: 5.0, commits: 3915, forks: 5610, found: 1).
 * Repository https://github.com/kubernetes/website (score: 5.0, commits: 27396, forks: 10272, found: 1).
 * Repository https://github.com/trustwallet/assets (score: 5.0, commits: 12743, forks: 10212, found: 1).
 * Repository https://github.com/enaqx/awesome-react (score: 5.0, commits: 1925, forks: 5685, found: 1).
-* Repository https://github.com/hashicorp/terraform (score: 5.0, commits: 29350, forks: 7199, found: 2).
+* Repository https://github.com/hashicorp/terraform (score: 5.0, commits: 29351, forks: 7204, found: 4).
 * Repository https://github.com/RocketChat/Rocket.Chat (score: 5.0, commits: 20771, forks: 7111, found: 1).
+* Repository https://github.com/videojs/video.js (score: 5.0, commits: 3785, forks: 7025, found: 1).
 * Repository https://github.com/CocoaPods/Specs (score: 5.0, commits: 639713, forks: 8988, found: 1).
 * Repository https://github.com/magento/magento2 (score: 5.0, commits: 126252, forks: 8742, found: 1).
 * Repository https://github.com/udacity/create-your-own-adventure (score: 5.0, commits: 12664, forks: 9683, found: 1).
+* Repository https://github.com/akullpp/awesome-java (score: 5.0, commits: 1584, forks: 6601, found: 1).
 * Repository https://github.com/sindresorhus/awesome-nodejs (score: 5.0, commits: 821, forks: 5246, found: 1).
 * Repository https://github.com/fffaraz/awesome-cpp (score: 5.0, commits: 1469, forks: 5916, found: 1).
 * Repository https://github.com/strapi/strapi (score: 5.0, commits: 19755, forks: 5106, found: 1).
 * Repository https://github.com/openssl/openssl (score: 5.0, commits: 30715, forks: 7549, found: 1).
 * Repository https://github.com/facebook/jest (score: 5.0, commits: 5749, forks: 5541, found: 1).
+* Repository https://github.com/coder/code-server (score: 5.0, commits: 3157, forks: 4195, found: 2).
+* Repository https://github.com/babel/babel (score: 5.0, commits: 14971, forks: 5168, found: 1).
 * Repository https://github.com/MunGell/awesome-for-beginners (score: 5.0, commits: 430, forks: 5424, found: 2).
-* Repository https://github.com/elastic/kibana (score: 4.9, commits: 49383, forks: 7006, found: 1).
+* Repository https://github.com/judasn/IntelliJ-IDEA-Tutorial (score: 5.0, commits: 468, forks: 7248, found: 1).
+* Repository https://github.com/jenkinsci/jenkins (score: 5.0, commits: 31953, forks: 7175, found: 1).
+* Repository https://github.com/obsproject/obs-studio (score: 5.0, commits: 10299, forks: 5500, found: 1).
+* Repository https://github.com/elastic/kibana (score: 4.9, commits: 49411, forks: 7006, found: 2).
 * Repository https://github.com/foundation/foundation-sites (score: 4.9, commits: 17200, forks: 5685, found: 1).
 * Repository https://github.com/aosabook/500lines (score: 4.9, commits: 3297, forks: 5888, found: 1).
-* Repository https://github.com/neovim/neovim (score: 4.9, commits: 19859, forks: 3609, found: 1).
-* Repository https://github.com/Micropoor/Micro8 (score: 4.9, commits: 127, forks: 6800, found: 1).
-* Repository https://github.com/yiisoft/yii2 (score: 4.9, commits: 19907, forks: 6976, found: 1).
-* Repository https://github.com/encode/django-rest-framework (score: 4.9, commits: 8500, forks: 5999, found: 1).
-* Repository https://github.com/yangshun/front-end-interview-handbook (score: 4.9, commits: 527, forks: 4864, found: 1).
-* Repository https://github.com/mbadolato/iTerm2-Color-Schemes (score: 4.9, commits: 622, forks: 5981, found: 1).
-* Repository https://github.com/facebookresearch/Detectron (score: 4.9, commits: 141, forks: 5412, found: 1).
-* Repository https://github.com/isocpp/CppCoreGuidelines (score: 4.9, commits: 1997, forks: 4454, found: 1).
-* Repository https://github.com/traefik/traefik (score: 4.9, commits: 4219, forks: 4007, found: 1).
-* Repository https://github.com/Activiti/Activiti (score: 4.9, commits: 10774, forks: 6585, found: 1).
-* Repository https://github.com/github/personal-website (score: 4.9, commits: 192, forks: 6638, found: 1).
-* Repository https://github.com/udacity/ud851-Exercises (score: 4.9, commits: 48, forks: 7103, found: 1).
-* Repository https://github.com/swagger-api/swagger-codegen (score: 4.9, commits: 11486, forks: 5705, found: 1).
-* Repository https://github.com/scwang90/SmartRefreshLayout (score: 4.9, commits: 1092, forks: 4767, found: 1).
-* Repository https://github.com/hashicorp/terraform-provider-aws (score: 4.8, commits: 41684, forks: 6049, found: 2).
-* Repository https://github.com/emberjs/ember.js (score: 4.8, commits: 21052, forks: 4258, found: 1).
-* Repository https://github.com/hashicorp/consul (score: 4.8, commits: 16158, forks: 3942, found: 1).
-* Repository https://github.com/koajs/koa (score: 4.8, commits: 1141, forks: 3118, found: 1).
-* Repository https://github.com/bayandin/awesome-awesomeness (score: 4.8, commits: 572, forks: 3460, found: 2).
-* Repository https://github.com/sudheerj/reactjs-interview-questions (score: 4.8, commits: 304, forks: 4277, found: 1).
-* Repository https://github.com/lmoroney/dlaicourse (score: 4.8, commits: 404, forks: 5499, found: 2).
-* Repository https://github.com/hoppscotch/hoppscotch (score: 4.8, commits: 3943, forks: 2475, found: 1).
-* Repository https://github.com/kaldi-asr/kaldi (score: 4.8, commits: 9224, forks: 4845, found: 1).
-* Repository https://github.com/jenkins-docs/simple-node-js-react-npm-app (score: 4.8, commits: 16, forks: 5901, found: 1).
-* Repository https://github.com/v8/v8 (score: 4.8, commits: 71968, forks: 3540, found: 1).
-* Repository https://github.com/vuejs/devtools (score: 4.8, commits: 1842, forks: 3577, found: 1).
-* Repository https://github.com/sorin-ionescu/prezto (score: 4.8, commits: 1972, forks: 4445, found: 1).
-* Repository https://github.com/telegramdesktop/tdesktop (score: 4.7, commits: 11428, forks: 3756, found: 1).
-* Repository https://github.com/airbnb/lottie-ios (score: 4.7, commits: 951, forks: 3279, found: 1).
-* Repository https://github.com/Dreamacro/clash (score: 4.7, commits: 719, forks: 3200, found: 1).
-* Repository https://github.com/pytorch/fairseq (score: 4.7, commits: 2088, forks: 3903, found: 1).
-* Repository https://github.com/SwiftyJSON/SwiftyJSON (score: 4.7, commits: 739, forks: 3278, found: 1).
-* Repository https://github.com/udacity/deep-learning-v2-pytorch (score: 4.7, commits: 377, forks: 4937, found: 1).
-* Repository https://github.com/rms-support-letter/rms-support-letter.github.io (score: 4.7, commits: 13850, forks: 5132, found: 1).
-* Repository https://github.com/iissnan/hexo-theme-next (score: 4.7, commits: 1808, forks: 3790, found: 1).
-* Repository https://github.com/ReactiveX/rxjs (score: 4.7, commits: 4910, forks: 2698, found: 1).
 
-Among the top 100 repositories 30 duplicates (23.1 %) have been found.
+Among the top 100 repositories 63 duplicates (38.7 %) have been found.
+
 
 ### Reinforced learning trajectories
 Work in progress...
