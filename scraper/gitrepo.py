@@ -39,9 +39,11 @@ class GitRepository:
             self.open_issues_count = int(json_repository["open_issues_count"])
             self.network_count = json_repository["network_count"]
             self.subscriber_count = json_repository["subscribers_count"]
-            self.license = json_repository["license"]["name"] if not isinstance(json_repository["license"],type(None)) else ""
+            self.license = json_repository["license"]["name"] if not isinstance(
+                json_repository["license"],type(None)) else ""
 
-            json_collaborators = get_github_collection_count(f"https://api.github.com/repos/{self.full_name}/collaborators")
+            json_collaborators = get_github_collection_count(
+                f"https://api.github.com/repos/{self.full_name}/collaborators")
             self.collaborators_count = json_collaborators
 
             json_commits = get_github_collection_count(f"https://api.github.com/repos/{self.full_name}/commits")
@@ -59,7 +61,8 @@ class GitRepository:
 
     def score(self):
         try:
-            return math.log10(self.stargazers_count+self.forks*10+self.commits_count/100+self.collaborators_count*10+self.events_count+self.branches_count+1)
+            return math.log10(self.stargazers_count + self.forks*10 + self.commits_count/100
+                            + self.collaborators_count*10 + self.events_count + self.branches_count+1)
         except Exception:
             return 0
 
