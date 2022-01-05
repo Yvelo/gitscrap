@@ -14,7 +14,6 @@ MOVE_STACK = 6
 REPOSITORY_STACK_SIZE = 1000
 repository_stack=[]
 np.random.seed(int(time.time()))
-#np.random.seed(0)
 
 def pile_repository(repo, tag):
     if repository_stack.count(repo) == 0:

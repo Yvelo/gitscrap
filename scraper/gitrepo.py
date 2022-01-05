@@ -10,7 +10,7 @@ class GitRepository:
             self.full_name = repo_name
             self._query_github(owner)
         except Exception as ex:
-            print("Repository creation failed: " + repr(ex))
+            print(f"Repository creation failed: {repr(ex)}")
             raise ex
 
     def __str__(self):
@@ -56,7 +56,7 @@ class GitRepository:
             self.branches_count = json_branches
 
         except Exception as ex:
-            print("API call failed: " + repr(ex))
+            print(f"API call failed: {repr(ex)}")
             raise ex
 
     def score(self):
@@ -123,5 +123,5 @@ class GitRepository:
                 NOW()
                 )"""])
         except Exception as ex:
-            print("SQL call failed: " + repr(ex))
+            print(f"SQL call failed: {repr(ex)}")
             raise ex

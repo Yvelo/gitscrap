@@ -29,7 +29,7 @@ def get_database_connection():
         connection = psycopg2.connect(
             f"dbname='{database_name}' user='{database_user}' host='{database_ip}' password='{database_password}'")
     except psycopg2.OperationalError as ex:
-        print("Database authentication failed: " + repr(ex))
+        print(f"Database authentication failed: {repr(ex)}")
         return None
     else:
         return connection
@@ -41,7 +41,7 @@ def get_cursor(select_statement) -> object:
         cursor.execute(select_statement)
         recorset = cursor.fetchall()
     except Exception as ex:
-        print("Query failed: " + repr(ex))
+        print(f"Query failed: {repr(ex)}")
     else:
         return recorset
     finally:
@@ -55,7 +55,7 @@ def persist_statements(sql_statements):
             cursor.execute(sql_statement)
         connection.commit()
     except Exception as ex:
-        print("Changes failed to commit: " + repr(ex))
+        print(f"Changes failed to commit: {repr(ex)}")
     finally:
         connection.close()
 
@@ -65,7 +65,7 @@ def wait_for_githup_api_limit(headers):
             headers["Date"],"%a, %d %b %Y %H:%M:%S GMT").timestamp()) / (float(headers["X-RateLimit-Remaining"]) + 1)
         sleep(wait_time)
     except Exception as ex:
-        print(f"API call failed ({headers}): " + repr(ex))
+        print(f"API call failed ({headers}): {repr(ex)}")
 
 def get_from_github(url):
     try:
@@ -74,7 +74,7 @@ def get_from_github(url):
         #print(json.dumps(response.json()))
         return response.json()
     except Exception as ex:
-        print(f"API get call failed ({url}): " + repr(ex))
+        print(f"API get call failed ({url}): {repr(ex)}")
 
 def get_github_collection_count(url):
     try:
@@ -99,4 +99,4 @@ def get_github_collection_item(url, item_index):
     except IndexError as ex:
         pass
     except Exception as ex:
-        print(f"API get item call failed ({url}): " + repr(ex))
+        print(f"API get item call failed ({url}): {repr(ex)}")

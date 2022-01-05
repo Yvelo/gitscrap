@@ -9,7 +9,7 @@ class GitUser:
             self.login = login
             self._query_github()
         except Exception as ex:
-            print("User creation failed: " + repr(ex))
+            print(f"User creation failed: {repr(ex)}")
             raise ex
 
     def __str__(self):
@@ -43,7 +43,7 @@ class GitUser:
             self.events_count = json_events
 
         except Exception as ex:
-            print("API call failed: " + repr(ex))
+            print(f"API call failed: {repr(ex)}")
             raise ex
 
     def score(self):
@@ -88,5 +88,5 @@ class GitUser:
                 NOW()
                 )"""])
         except Exception as ex:
-            print("SQL call failed: " + repr(ex))
+            print(f"SQL call failed: {repr(ex)}")
             raise ex
