@@ -57,7 +57,7 @@ GitScrapt consists of the following components:
 * A module to organise GitScrap testing.
 * A module to prepare graphics on the data collected.
 
-To connect to gitHub you need to get an API token from your GitHub account such as token="ghp_xUiJ0LRNJYL34t6xhsGbtU7n155IvL1Z0aUZ"
+To connect to gitHub you need to get an API token from your GitHub account.
 
 The .env files in the root repository is used to stored passwords and API key so that they are not published on GitHub:
 
