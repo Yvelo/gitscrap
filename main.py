@@ -11,7 +11,7 @@ from datetime import datetime
 from time import sleep
 from pprint import pprint
 
-#from tests.basic_test import *
+from tests.basic_test import *
 
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
