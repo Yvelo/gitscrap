@@ -1,3 +1,4 @@
+import requests
 #from tests.basic_test import *
 
 def application(env, start_response):
