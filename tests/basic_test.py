@@ -31,4 +31,4 @@ def test_case_2():
 #persist_statements(["DELETE FROM repos WHERE tag='Reference repositories'"])
 #reset_database()
 #test_case_1()
-test_case_2()
+#test_case_2()
