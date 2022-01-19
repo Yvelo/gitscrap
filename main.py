@@ -1,7 +1,7 @@
-#import requests
+import requests
 #from tests.basic_test import *
 
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
-    return [b"GitScrap Welcome YLM"]
+    return [b"GitScrap Welcome - 1"]
     #test_case_2()
