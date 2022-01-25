@@ -74,6 +74,8 @@ GITHUB_USER="..."
 GITHUB_API_KEY="..."
 
 ## Results
+Repositories are discovered using a biased random selections. Big repositories with many contributors and lots of commits are more likely to be discovered by GitScrap than smaller repository. The list of sites consolidated by this process should not be used for any statistical extrapolation on the overall set of GitHub repositories.
+
 ### Without reinforcement learning
 In this case the algorithm moves from repositories to repositories using fixed and predetermined probabilities to decide between each of the seven possible actions.
 
