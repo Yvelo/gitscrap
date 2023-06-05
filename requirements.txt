@@ -1,6 +1,6 @@
-matplotlib==3.5.*
-numpy==1.22.0
-requests==2.26.0
-python-dotenv==0.19.*
-setuptools==65.5.1
-psycopg2==2.8.6
+matplotlib #==3.5.*
+numpy #==1.22.0
+requests #==2.26.0
+python-dotenv #==0.19.*
+setuptools #==65.5.1
+psycopg2 #==2.8.6
